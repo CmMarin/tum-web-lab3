@@ -3,7 +3,7 @@
 A premium landing page for "Vaidoso Kizomba School," an Angolan dance academy. The design features a modern dark aesthetic with neon accents, glassmorphism effects, and fluid typography.
 
 ## Live Demo
-[View Live Site](https://cmmarin.github.io/tum-web-lab2/)
+[View Live Site](https://cmmarin.github.io/tum-web-lab3/)
 
 ## Topic & Features
 This project is a high-energy, single-page website built with semantic HTML5 and **Tailwind CSS** (modular approach). 
