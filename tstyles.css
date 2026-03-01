@@ -162,7 +162,7 @@
     
     .stat {
         @apply text-center p-8 relative rounded-[20px] border border-white/10 overflow-hidden;
-        @apply transition-all duration-400;
+        @apply transition-all duration-500;
         background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
     }
     
@@ -259,7 +259,7 @@
     
     .contact-info {
         @apply bg-[rgba(30,30,30,0.4)] p-14 rounded-[30px] border border-white/10;
-        @apply transition-all duration-400 backdrop-blur-md;
+        @apply transition-all duration-500 backdrop-blur-md;
     }
     
     .contact-info:hover {
@@ -285,7 +285,7 @@
     
     .contact-cta {
         @apply flex flex-col justify-center items-center text-center p-14 rounded-[30px];
-        @apply relative overflow-hidden backdrop-blur-md transition-all duration-400;
+        @apply relative overflow-hidden backdrop-blur-md transition-all duration-500;
         background: linear-gradient(145deg, rgba(255, 45, 85, 0.05) 0%, rgba(0,0,0,0) 100%);
         @apply border border-primary/15;
     }
