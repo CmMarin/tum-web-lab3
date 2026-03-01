@@ -27,6 +27,20 @@
               fontFamily: {
                 sans: ['Open Sans', 'sans-serif'],
                 montserrat: ['Montserrat', 'sans-serif'],
+              },
+              keyframes: {
+                fadeIn: {
+                  '0%': { opacity: '0', transform: 'translateY(20px)' },
+                  '100%': { opacity: '1', transform: 'translateY(0)' },
+                },
+                slideDown: {
+                  '0%': { opacity: '0', transform: 'translateY(-10px)' },
+                  '100%': { opacity: '1', transform: 'translateY(0)' },
+                }
+              },
+              animation: {
+                fadeIn: 'fadeIn 1s ease-out',
+                slideDown: 'slideDown 0.3s ease-out forwards',
               }
             }
           }
@@ -60,12 +74,12 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-overlay-bottom"></div>
-        <div class="hero-content">
-            <h1>Feel the Rhythm of <span>Kizomba</span></h1>
-            <p>Learn the sensual and passionate dance from Angola</p>
-            <a href="https://www.instagram.com/vaidoso.kizomba.school/" class="cta-button" target="_blank">Get Started</a>
+    <section id="home" class="h-screen bg-[linear-gradient(rgba(18,18,18,0.4),#121212),url('hero-bg.jpg')] bg-cover bg-center bg-fixed flex justify-center items-center text-center relative pt-[80px]">
+        <div class="absolute bottom-0 left-0 w-full h-[150px] bg-gradient-to-b from-transparent to-[#121212]"></div>
+        <div class="max-w-[800px] p-8 z-10 animate-fadeIn">
+            <h1 class="text-[3.5rem] md:text-[5rem] font-bold leading-[1.1] mb-6 shadow-md drop-shadow-[0_0_20px_rgba(255,45,85,0.4)]">Feel the Rhythm of <span class="text-primary drop-shadow-[0_0_20px_rgba(255,45,85,0.4)]">Kizomba</span></h1>
+            <p class="text-[1.2rem] md:text-[1.5rem] mb-10 text-gray-200">Learn the sensual and passionate dance from Angola</p>
+            <a href="https://www.instagram.com/vaidoso.kizomba.school/" class="inline-block bg-primary text-white font-bold py-4 px-10 rounded-full text-[1.1rem] transition-all duration-300 shadow-[0_10px_40px_-10px_rgba(255,45,85,0.5)] hover:bg-white hover:text-primary hover:-translate-y-[3px] hover:shadow-[0_15px_30px_rgba(255,45,85,0.4)]" target="_blank">Get Started</a>
         </div>
     </section>
 
