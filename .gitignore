@@ -1,9 +1,6 @@
 # Dependencies
 node_modules/
 
-# Build output
-output.css
-
 # npm
 package-lock.json
 
