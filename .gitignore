@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Build output
+output.css
+
+# npm
+package-lock.json
+
+# Logs
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db

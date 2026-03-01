@@ -1,0 +1,25 @@
+{
+  "name": "tum-web-lab3",
+  "version": "1.0.0",
+  "description": "A premium landing page for \"Vaidoso Kizomba School,\" an Angolan dance academy. The design features a modern dark aesthetic with neon accents, glassmorphism effects, and fluid typography.",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "npx tailwindcss -i ./tstyles.css -o ./output.css",
+    "watch:css": "npx tailwindcss -i ./tstyles.css -o ./output.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CmMarin/tum-web-lab3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CmMarin/tum-web-lab3/issues"
+  },
+  "homepage": "https://github.com/CmMarin/tum-web-lab3#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
+  }
+}

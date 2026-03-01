@@ -10,46 +10,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-          theme: {
-            extend: {
-              colors: {
-                dark: '#121212',
-                card: '#1e1e1e',
-                'card-hover': '#252525',
-                primary: '#ff2d55',
-                'primary-glow': 'rgba(255, 45, 85, 0.4)',
-                secondary: '#ffb81c',
-                muted: '#b0b0b0',
-              },
-              fontFamily: {
-                sans: ['Open Sans', 'sans-serif'],
-                montserrat: ['Montserrat', 'sans-serif'],
-              },
-              keyframes: {
-                fadeIn: {
-                  '0%': { opacity: '0', transform: 'translateY(20px)' },
-                  '100%': { opacity: '1', transform: 'translateY(0)' },
-                },
-                slideDown: {
-                  '0%': { opacity: '0', transform: 'translateY(-10px)' },
-                  '100%': { opacity: '1', transform: 'translateY(0)' },
-                }
-              },
-              animation: {
-                fadeIn: 'fadeIn 1s ease-out',
-                slideDown: 'slideDown 0.3s ease-out forwards',
-              }
-            }
-          }
-        }
-    </script>
-    <link rel="stylesheet" href="tstyles.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="output.css">
     <!-- <link rel="stylesheet" href="style.css"> -->
 </head>
-<body class="bg-dark text-white font-sans leading-relaxed overflow-x-hidden antialiased">
+<body>
     <!-- Navigation -->
     <input type="checkbox" id="mobile-menu-check" class="hidden peer">
     <nav class="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-[1200px] z-[1000] bg-[#141414]/60 backdrop-blur-2xl border border-white/10 rounded-[50px] px-8 py-4 shadow-lg transition-all duration-500 ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:bg-[#191919]/70 hover:border-primary/20 hover:shadow-xl peer-checked:rounded-3xl peer-checked:bg-[#141414]/95 peer-checked:[&_.nav-menu]:flex peer-checked:[&_.nav-menu]:flex-col peer-checked:[&_.nav-menu]:absolute peer-checked:[&_.nav-menu]:top-full peer-checked:[&_.nav-menu]:left-0 peer-checked:[&_.nav-menu]:w-full peer-checked:[&_.nav-menu]:bg-[#141414] peer-checked:[&_.nav-menu]:p-8 peer-checked:[&_.nav-menu]:rounded-b-3xl peer-checked:[&_.nav-menu]:shadow-2xl peer-checked:[&_.nav-menu]:animate-slideDown md:peer-checked:[&_.nav-menu]:flex-row md:peer-checked:[&_.nav-menu]:static md:peer-checked:[&_.nav-menu]:bg-transparent md:peer-checked:[&_.nav-menu]:p-0 md:peer-checked:[&_.nav-menu]:shadow-none peer-checked:[&_.bar:nth-child(1)]:rotate-45 peer-checked:[&_.bar:nth-child(1)]:translate-y-[7px] peer-checked:[&_.bar:nth-child(2)]:opacity-0 peer-checked:[&_.bar:nth-child(3)]:-rotate-45 peer-checked:[&_.bar:nth-child(3)]:-translate-y-[7px]">
@@ -166,60 +131,60 @@
     </section>
 
     <!-- Classes Section -->
-    <section id="classes" class="classes">
-        <div class="bg-text" style="top: 20%; left: 80%; font-size: 10vw; opacity: 0.5;">RHYTHM</div>
-        <div class="classes-container">
-            <h2>Our Classes</h2>
+    <section id="classes" class="py-32 relative">
+        <div class="absolute top-[20%] left-[80%] text-[10vw] font-extrabold text-white/[0.05] pointer-events-none select-none font-montserrat uppercase">RHYTHM</div>
+        <div class="max-w-[1200px] mx-auto px-8">
+            <h2 class="text-5xl text-center mb-16 relative inline-block left-1/2 -translate-x-1/2 font-montserrat font-bold after:content-[''] after:block after:w-[60px] after:h-1 after:bg-primary after:mt-4 after:mx-auto after:rounded-sm after:shadow-[0_0_10px_#ff2d55]">Our Classes</h2>
             
             <!-- Desktop View -->
-            <div class="classes-grid desktop-view">
-                <div class="class-card">
-                    <div class="class-badge">First Class Free</div>
-                    <h3>Beginners</h3>
-                    <div class="difficulty">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 desktop-view">
+                <div class="bg-gradient-to-br from-[#1a1a1a] to-[#151515] rounded-[30px] p-14 pb-10 relative border border-white/[0.03] transition-all duration-500 ease-[cubic-bezier(0.2,0.8,0.2,1)] shadow-[0_10px_30px_rgba(0,0,0,0.2)] flex flex-col hover:-translate-y-4 hover:border-primary/30 hover:shadow-[0_25px_50px_rgba(0,0,0,0.4),0_0_30px_rgba(255,45,85,0.05)]">
+                    <div class="absolute top-6 right-6 bg-primary/15 text-primary py-2 px-4 rounded-full text-xs font-extrabold uppercase tracking-wider border border-primary/30">First Class Free</div>
+                    <h3 class="text-4xl mb-2 text-white tracking-tight font-montserrat">Beginners</h3>
+                    <div class="text-secondary mb-8 text-sm">
                         <span class="star">★</span>
                         <span class="star">☆</span>
                         <span class="star">☆</span>
                     </div>
-                    <p class="class-time">Monday & Wednesday • 7:00 PM</p>
-                    <p class="class-description">New to kizomba? Learn the fundamentals of connection, basic steps, and rhythm. Perfect for dancers of any background.</p>
-                    <p class="class-price">€45/month</p>
+                    <p class="text-primary mb-6 font-bold text-sm uppercase tracking-wide">Monday & Wednesday • 7:00 PM</p>
+                    <p class="text-gray-500 mb-auto text-lg leading-relaxed font-light pb-10">New to kizomba? Learn the fundamentals of connection, basic steps, and rhythm. Perfect for dancers of any background.</p>
+                    <p class="text-4xl font-extrabold text-white text-left mt-auto tracking-tight drop-shadow-[0_0_20px_rgba(255,255,255,0.1)]">€45/month</p>
                 </div>
 
-                <div class="class-card">
-                    <h3>Intermediate</h3>
-                    <div class="difficulty">
+                <div class="bg-gradient-to-br from-[#1a1a1a] to-[#151515] rounded-[30px] p-14 pb-10 relative border border-white/[0.03] transition-all duration-500 ease-[cubic-bezier(0.2,0.8,0.2,1)] shadow-[0_10px_30px_rgba(0,0,0,0.2)] flex flex-col hover:-translate-y-4 hover:border-primary/30 hover:shadow-[0_25px_50px_rgba(0,0,0,0.4),0_0_30px_rgba(255,45,85,0.05)]">
+                    <h3 class="text-4xl mb-2 text-white tracking-tight font-montserrat">Intermediate</h3>
+                    <div class="text-secondary mb-8 text-sm">
                         <span class="star">★</span>
                         <span class="star">★</span>
                         <span class="star">☆</span>
                     </div>
-                    <p class="class-time">Tuesday & Thursday • 8:00 PM</p>
-                    <p class="class-description">Build on your foundations with more complex movements, styling, and partnering techniques. Grow your musicality.</p>
-                    <p class="class-price">€55/month</p>
+                    <p class="text-primary mb-6 font-bold text-sm uppercase tracking-wide">Tuesday & Thursday • 8:00 PM</p>
+                    <p class="text-gray-500 mb-auto text-lg leading-relaxed font-light pb-10">Build on your foundations with more complex movements, styling, and partnering techniques. Grow your musicality.</p>
+                    <p class="text-4xl font-extrabold text-white text-left mt-auto tracking-tight drop-shadow-[0_0_20px_rgba(255,255,255,0.1)]">€55/month</p>
                 </div>
 
-                <div class="class-card">
-                    <h3>Advanced</h3>
-                    <div class="difficulty">
+                <div class="bg-gradient-to-br from-[#1a1a1a] to-[#151515] rounded-[30px] p-14 pb-10 relative border border-white/[0.03] transition-all duration-500 ease-[cubic-bezier(0.2,0.8,0.2,1)] shadow-[0_10px_30px_rgba(0,0,0,0.2)] flex flex-col hover:-translate-y-4 hover:border-primary/30 hover:shadow-[0_25px_50px_rgba(0,0,0,0.4),0_0_30px_rgba(255,45,85,0.05)]">
+                    <h3 class="text-4xl mb-2 text-white tracking-tight font-montserrat">Advanced</h3>
+                    <div class="text-secondary mb-8 text-sm">
                         <span class="star">★</span>
                         <span class="star">★</span>
                         <span class="star">★</span>
                     </div>
-                    <p class="class-time">Friday • 8:30 PM</p>
-                    <p class="class-description">Master intricate techniques, advanced styling, and leading/following. For experienced dancers seeking to refine their craft.</p>
-                    <p class="class-price">€65/month</p>
+                    <p class="text-primary mb-6 font-bold text-sm uppercase tracking-wide">Friday • 8:30 PM</p>
+                    <p class="text-gray-500 mb-auto text-lg leading-relaxed font-light pb-10">Master intricate techniques, advanced styling, and leading/following. For experienced dancers seeking to refine their craft.</p>
+                    <p class="text-4xl font-extrabold text-white text-left mt-auto tracking-tight drop-shadow-[0_0_20px_rgba(255,255,255,0.1)]">€65/month</p>
                 </div>
 
-                <div class="class-card">
-                    <h3>Social Nights</h3>
-                    <div class="difficulty">
+                <div class="bg-gradient-to-br from-[#1a1a1a] to-[#151515] rounded-[30px] p-14 pb-10 relative border border-white/[0.03] transition-all duration-500 ease-[cubic-bezier(0.2,0.8,0.2,1)] shadow-[0_10px_30px_rgba(0,0,0,0.2)] flex flex-col hover:-translate-y-4 hover:border-primary/30 hover:shadow-[0_25px_50px_rgba(0,0,0,0.4),0_0_30px_rgba(255,45,85,0.05)]">
+                    <h3 class="text-4xl mb-2 text-white tracking-tight font-montserrat">Social Nights</h3>
+                    <div class="text-secondary mb-8 text-sm">
                         <span class="star">★</span>
                         <span class="star">★</span>
                         <span class="star">☆</span>
                     </div>
-                    <p class="class-time">Saturday • 9:00 PM</p>
-                    <p class="class-description">Practice what you've learned in a relaxed, social atmosphere. Dance, connect, and enjoy the community.</p>
-                    <p class="class-price">€12/night</p>
+                    <p class="text-primary mb-6 font-bold text-sm uppercase tracking-wide">Saturday • 9:00 PM</p>
+                    <p class="text-gray-500 mb-auto text-lg leading-relaxed font-light pb-10">Practice what you've learned in a relaxed, social atmosphere. Dance, connect, and enjoy the community.</p>
+                    <p class="text-4xl font-extrabold text-white text-left mt-auto tracking-tight drop-shadow-[0_0_20px_rgba(255,255,255,0.1)]">€12/night</p>
                 </div>
             </div>
 
@@ -260,7 +225,7 @@
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials">
-        <div class="bg-text" style="top: 10%; right: 10%; left: auto; opacity: 0.15; font-size: 8vw;">FAMILY</div>
+        <div class="absolute top-[10%] right-[10%] text-[8vw] font-extrabold text-white/[0.15] pointer-events-none select-none font-montserrat uppercase">FAMILY</div>
         <div class="testimonials-container">
             <h2>What Our Students Say</h2>
             
@@ -342,7 +307,7 @@
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
-        <div class="bg-text" style="bottom: 10%; left: 30%; opacity: 0.41; font-size: 14vw; line-height: 0.8;">LET'S<br>DANCE</div>
+        <div class="absolute bottom-[10%] left-[30%] text-[14vw] font-extrabold text-white/[0.04] pointer-events-none select-none font-montserrat uppercase leading-[0.8]">LET'S<br>DANCE</div>
         <div class="contact-container">
             <h2>Ready to Dance?</h2>
             

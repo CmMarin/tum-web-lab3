@@ -2,15 +2,304 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom Scrollbar */
-html {
-    scrollbar-width: thin;
-    scrollbar-color: #ff2d55 #121212;
+@layer base {
+    html {
+        @apply scroll-smooth;
+        scrollbar-width: thin;
+        scrollbar-color: #ff2d55 #121212;
+    }
+    
+    body {
+        @apply bg-dark text-white font-sans leading-relaxed overflow-x-hidden;
+    }
+    
+    h1, h2, h3, h4 {
+        @apply font-montserrat font-bold tracking-tight;
+    }
 }
 
-/* Base Typography defaults if not using classes everywhere (optional, but good for meaningful defaults) */
-h1, h2, h3, h4 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.02em;
+@layer components {
+    /* Navigation */
+    .navbar {
+        @apply fixed top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-[1200px] z-[1000];
+        @apply bg-[rgba(20,20,20,0.6)] backdrop-blur-2xl;
+        @apply border border-white/10 rounded-[50px] px-8 py-4;
+        @apply shadow-lg transition-all duration-500 ease-[cubic-bezier(0.2,0.8,0.2,1)];
+    }
+    
+    .navbar:hover {
+        @apply bg-[rgba(25,25,25,0.7)] border-primary/20 shadow-xl;
+    }
+    
+    .logo {
+        @apply text-[1.4rem] font-extrabold uppercase tracking-[2px];
+        @apply bg-gradient-to-r from-primary to-[#ff5e3a] bg-clip-text text-transparent;
+    }
+    
+    .nav-menu {
+        @apply flex gap-8 items-center;
+    }
+    
+    .nav-link {
+        @apply relative text-white font-semibold text-[0.95rem] tracking-wide;
+        @apply transition-colors duration-300 hover:text-primary;
+    }
+    
+    .nav-link::after {
+        @apply content-[''] absolute bottom-[-4px] left-0 w-0 h-[2px] bg-primary;
+        @apply transition-all duration-300;
+    }
+    
+    .nav-link:hover::after {
+        @apply w-full;
+    }
+    
+    /* Hero Section */
+    .hero {
+        @apply h-screen relative flex justify-center items-center text-center overflow-hidden pt-20;
+        background: linear-gradient(rgba(18,18,18,0.4), #121212), url('https://images.unsplash.com/photo-1546422401-68b415cbf8de?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+        @apply bg-cover bg-center bg-fixed;
+    }
+    
+    .hero-overlay-bottom {
+        @apply absolute bottom-0 left-0 w-full h-[150px];
+        background: linear-gradient(to bottom, transparent, #121212);
+    }
+    
+    .hero-content {
+        @apply max-w-[800px] p-8 z-10 animate-fadeIn;
+    }
+    
+    .hero-content h1 {
+        @apply text-[3.5rem] md:text-[5rem] font-bold leading-[1.1] mb-6;
+        filter: drop-shadow(0 0 20px rgba(255, 45, 85, 0.4));
+    }
+    
+    .hero-content h1 span {
+        @apply text-primary;
+        filter: drop-shadow(0 0 20px rgba(255, 45, 85, 0.4));
+    }
+    
+    .hero-content p {
+        @apply text-[1.2rem] md:text-[1.5rem] mb-10 text-gray-200;
+    }
+    
+    .cta-button {
+        @apply inline-block bg-primary text-white font-bold py-4 px-10 rounded-full text-[1.1rem];
+        @apply transition-all duration-300;
+        @apply shadow-[0_10px_40px_-10px_rgba(255,45,85,0.5)];
+        @apply hover:bg-white hover:text-primary hover:-translate-y-[3px];
+        @apply hover:shadow-[0_15px_30px_rgba(255,45,85,0.4)];
+    }
+    
+    /* About Section */
+    .about {
+        @apply py-32 relative;
+    }
+    
+    .about-container, .classes-container, .testimonials-container, .contact-container {
+        @apply max-w-[1200px] mx-auto px-8;
+    }
+    
+    .bg-text {
+        @apply absolute text-[20vw] font-black uppercase opacity-[0.02] select-none pointer-events-none;
+        @apply left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2;
+    }
+    
+    h2 {
+        @apply text-5xl text-center mb-16 relative inline-block left-1/2 -translate-x-1/2;
+    }
+    
+    h2::after {
+        @apply content-[''] block w-[60px] h-1 bg-primary mx-auto mt-4 rounded-sm;
+        box-shadow: 0 0 10px theme('colors.primary');
+    }
+    
+    .about-content {
+        @apply grid grid-cols-1 md:grid-cols-2 gap-16 mb-20;
+    }
+    
+    .about-text {
+        @apply bg-card p-10 rounded-2xl border border-white/10;
+        @apply transition-transform duration-300 hover:-translate-y-2 hover:border-primary;
+    }
+    
+    .about-text h3 {
+        @apply text-[1.8rem] text-primary mb-4;
+    }
+    
+    .about-text p {
+        @apply text-muted;
+    }
+    
+    .why-vaidoso {
+        @apply bg-card p-12 rounded-[20px] relative overflow-hidden;
+        border: 3px solid transparent;
+        background-clip: padding-box, border-box;
+        background-image: linear-gradient(#1e1e1e, #1e1e1e), linear-gradient(135deg, #ff2d55 0%, #ff5e3a 100%);
+    }
+    
+    .why-vaidoso h3 {
+        @apply text-[2rem] mb-8 text-center;
+    }
+    
+    .features-list {
+        @apply grid grid-cols-1 md:grid-cols-2 gap-8;
+    }
+    
+    .feature-item {
+        @apply flex items-center gap-4 p-4 bg-white/5 rounded-lg;
+        @apply transition-all duration-300 hover:bg-white/10;
+    }
+    
+    .feature-icon {
+        @apply text-primary font-bold text-xl;
+    }
+    
+    .stats {
+        @apply grid grid-cols-1 md:grid-cols-3 gap-8 mt-16;
+    }
+    
+    .stat {
+        @apply text-center p-8 relative rounded-[20px] border border-white/10 overflow-hidden;
+        @apply transition-all duration-400;
+        background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+    }
+    
+    .stat-number {
+        @apply relative z-[1] text-6xl font-extrabold text-white block mb-2;
+        text-shadow: 0 0 20px rgba(255, 45, 85, 0.3);
+    }
+    
+    .stat-label {
+        @apply text-muted text-sm uppercase tracking-[2px];
+    }
+    
+    /* Classes Section */
+    .classes {
+        @apply py-32 relative;
+    }
+    
+    .classes-grid {
+        @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10;
+    }
+    
+    .class-card {
+        @apply bg-gradient-to-br from-[#1a1a1a] to-[#151515] rounded-[30px] p-14 px-10;
+        @apply relative border border-white/5 transition-all duration-500;
+        @apply shadow-[0_10px_30px_rgba(0,0,0,0.2)];
+        @apply flex flex-col hover:-translate-y-4 hover:border-primary/30;
+        @apply hover:shadow-[0_25px_50px_rgba(0,0,0,0.4),0_0_30px_rgba(255,45,85,0.05)];
+    }
+    
+    .class-badge {
+        @apply absolute top-6 right-6 bg-primary text-white px-4 py-2 rounded-full;
+        @apply text-xs font-bold uppercase tracking-wide;
+    }
+    
+    .class-card h3 {
+        @apply text-3xl mb-4 text-white;
+    }
+    
+    .difficulty {
+        @apply flex gap-1 mb-4;
+    }
+    
+    .star {
+        @apply text-2xl text-secondary;
+    }
+    
+    .class-time {
+        @apply text-muted text-sm mb-6 flex items-center gap-2;
+    }
+    
+    .class-description {
+        @apply text-[#d0d0d0] leading-relaxed mb-8 flex-grow;
+    }
+    
+    .class-price {
+        @apply text-4xl font-bold text-primary mb-0;
+    }
+    
+    /* Testimonials Section */
+    .testimonials {
+        @apply py-32 relative;
+    }
+    
+    .testimonials-grid {
+        @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10;
+    }
+    
+    .testimonial-card {
+        @apply bg-gradient-to-br from-[#1e1e1e] to-[#181818] p-10 rounded-2xl;
+        @apply border border-white/10 relative;
+    }
+    
+    .stars {
+        @apply text-secondary mb-6 text-lg;
+    }
+    
+    .testimonial-text {
+        @apply text-lg italic text-gray-300 mb-8 leading-relaxed;
+    }
+    
+    .testimonial-author {
+        @apply text-white font-bold text-right block;
+    }
+    
+    /* Contact Section */
+    .contact {
+        @apply py-32 relative;
+        background: linear-gradient(180deg, #121212 0%, #1a050a 100%);
+    }
+    
+    .contact-content {
+        @apply grid grid-cols-1 md:grid-cols-2 gap-16;
+    }
+    
+    .contact-info {
+        @apply bg-[rgba(30,30,30,0.4)] p-14 rounded-[30px] border border-white/10;
+        @apply transition-all duration-400 backdrop-blur-md;
+    }
+    
+    .contact-info:hover {
+        @apply -translate-y-2 bg-[rgba(30,30,30,0.6)] border-white/20;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    }
+    
+    .contact-info h3 {
+        @apply text-2xl mb-8;
+    }
+    
+    .contact-info p {
+        @apply mb-8 text-xl text-gray-300 flex items-center gap-4;
+    }
+    
+    .contact-info a {
+        @apply text-white no-underline transition-all duration-300 border-b border-transparent;
+    }
+    
+    .contact-info a:hover {
+        @apply text-primary border-b-primary;
+    }
+    
+    .contact-cta {
+        @apply flex flex-col justify-center items-center text-center p-14 rounded-[30px];
+        @apply relative overflow-hidden backdrop-blur-md transition-all duration-400;
+        background: linear-gradient(145deg, rgba(255, 45, 85, 0.05) 0%, rgba(0,0,0,0) 100%);
+        @apply border border-primary/15;
+    }
+    
+    .contact-cta:hover {
+        @apply -translate-y-2;
+        box-shadow: 0 0 40px rgba(255, 45, 85, 0.1);
+        @apply border-primary/30;
+    }
+    
+    .contact-cta p {
+        @apply text-3xl mb-10 font-bold leading-tight;
+        background: linear-gradient(90deg, #fff, #bbb);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 }
