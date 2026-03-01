@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,10 +10,32 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                dark: '#121212',
+                card: '#1e1e1e',
+                'card-hover': '#252525',
+                primary: '#ff2d55',
+                'primary-glow': 'rgba(255, 45, 85, 0.4)',
+                secondary: '#ffb81c',
+                muted: '#b0b0b0',
+              },
+              fontFamily: {
+                sans: ['Open Sans', 'sans-serif'],
+                montserrat: ['Montserrat', 'sans-serif'],
+              }
+            }
+          }
+        }
+    </script>
+    <link rel="stylesheet" href="tstyles.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
 </head>
-<body>
+<body class="bg-dark text-white font-sans leading-relaxed overflow-x-hidden antialiased">
     <!-- Navigation -->
     <input type="checkbox" id="mobile-menu-check">
     <nav class="navbar">

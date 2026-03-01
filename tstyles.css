@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Scrollbar */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #ff2d55 #121212;
+}
+
+/* Base Typography defaults if not using classes everywhere (optional, but good for meaningful defaults) */
+h1, h2, h3, h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
