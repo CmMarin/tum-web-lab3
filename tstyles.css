@@ -302,4 +302,162 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
+    
+    /* Footer */
+    .footer {
+        @apply bg-[#0a0a0a] py-20 pb-8 border-t border-[#222];
+    }
+    
+    .footer-content {
+        @apply max-w-[1200px] mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-12 mb-12;
+    }
+    
+    .footer-section h4 {
+        @apply mb-6 text-lg text-white font-bold;
+    }
+    
+    .footer-section p {
+        @apply text-gray-500 leading-relaxed;
+    }
+    
+    .footer-section ul {
+        @apply space-y-3;
+    }
+    
+    .footer-section a {
+        @apply text-gray-500 no-underline transition-colors duration-300 hover:text-primary;
+    }
+    
+    .footer-bottom {
+        @apply text-center pt-8 text-gray-600 border-t border-[#151515] text-sm;
+    }
+    
+    /* Mascot */
+    .mascot-container {
+        @apply fixed bottom-8 right-8 w-[250px] h-[250px] z-[999] cursor-pointer;
+        @apply flex justify-center items-center;
+        animation: mascotBounce 2s infinite ease-in-out;
+    }
+    
+    .mascot-body {
+        @apply w-[250px] h-[250px];
+        filter: drop-shadow(0 0 10px theme('colors.primary'));
+        transform-origin: bottom center;
+    }
+    
+    .mascot-body img {
+        @apply w-full h-full object-contain;
+    }
+    
+    .mascot-speech {
+        @apply absolute top-[-30px] right-[100px] bg-white text-dark py-2 px-5 rounded-[20px];
+        @apply text-xl font-bold whitespace-nowrap opacity-0 translate-y-2.5;
+        @apply transition-all duration-300 pointer-events-none shadow-md;
+    }
+    
+    .mascot-speech::after {
+        @apply content-[''] absolute bottom-[-5px] right-5 w-2.5 h-2.5 bg-white rotate-45;
+    }
+    
+    .mascot-container:hover .mascot-speech {
+        @apply opacity-100 translate-y-0;
+    }
+    
+    .mascot-container:hover .mascot-body {
+        animation: none;
+        transform: scale(1.1) rotate(5deg);
+    }
+    
+    /* Mobile View Components */
+    .mobile-view {
+        @apply hidden;
+    }
+    
+    @media (max-width: 768px) {
+        .desktop-view {
+            @apply hidden;
+        }
+        
+        .mobile-view {
+            @apply block;
+        }
+    }
+    
+    .mobile-scroll-container {
+        @apply flex overflow-x-auto gap-6 pb-8 px-2;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    
+    .mobile-scroll-container::-webkit-scrollbar {
+        @apply hidden;
+    }
+    
+    .mobile-card {
+        @apply flex-[0_0_85%] bg-card rounded-[20px] p-8 border border-white/5 relative;
+        @apply shadow-[0_10px_30px_rgba(0,0,0,0.3)];
+        scroll-snap-align: center;
+    }
+    
+    .mobile-card h3 {
+        @apply text-2xl text-primary mb-4;
+    }
+    
+    .mobile-card p {
+        @apply text-base text-muted leading-relaxed;
+    }
+    
+    .mobile-class-card {
+        @apply bg-gradient-to-br from-[#1a1a1a] to-[#151515] border-l-4 border-l-primary;
+        @apply flex flex-col justify-between min-h-[200px];
+    }
+    
+    .mobile-testimonial-card {
+        @apply bg-gradient-to-br from-[#1e1e1e] to-[#181818] italic;
+    }
+    
+    .mobile-contact-card {
+        @apply bg-[rgba(30,30,30,0.6)] backdrop-blur-md text-center;
+    }
+    
+    .mobile-feature-icon {
+        @apply text-3xl text-secondary mb-4 block;
+    }
+}
+
+@layer utilities {
+    /* Animations */
+    @keyframes mascotBounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-15px); }
+    }
+    
+    /* Noise texture overlay */
+    body::before {
+        content: "";
+        @apply fixed top-0 left-0 w-full h-full pointer-events-none z-[9999] opacity-[0.03];
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        mix-blend-mode: overlay;
+    }
+    
+    /* Custom scrollbar for webkit */
+    ::-webkit-scrollbar {
+        @apply w-1.5 h-1.5;
+    }
+    
+    ::-webkit-scrollbar-track {
+        @apply bg-dark;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        @apply rounded border border-dark;
+        background: rgba(255, 45, 85, 0.5);
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+        @apply bg-primary;
+        box-shadow: 0 0 10px rgba(255, 45, 85, 0.4);
+    }
 }
