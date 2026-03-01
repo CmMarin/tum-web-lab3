@@ -17,10 +17,10 @@
 <body>
     <!-- Navigation -->
     <input type="checkbox" id="mobile-menu-check" class="hidden peer">
-    <nav class="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-[1200px] z-[1000] bg-[#141414]/60 backdrop-blur-2xl border border-white/10 rounded-[50px] px-8 py-4 shadow-lg transition-all duration-500 ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:bg-[#191919]/70 hover:border-primary/20 hover:shadow-xl peer-checked:rounded-3xl peer-checked:bg-[#141414]/95 peer-checked:[&_.nav-menu]:flex peer-checked:[&_.nav-menu]:flex-col peer-checked:[&_.nav-menu]:absolute peer-checked:[&_.nav-menu]:top-full peer-checked:[&_.nav-menu]:left-0 peer-checked:[&_.nav-menu]:w-full peer-checked:[&_.nav-menu]:bg-[#141414] peer-checked:[&_.nav-menu]:p-8 peer-checked:[&_.nav-menu]:rounded-b-3xl peer-checked:[&_.nav-menu]:shadow-2xl peer-checked:[&_.nav-menu]:animate-slideDown md:peer-checked:[&_.nav-menu]:flex-row md:peer-checked:[&_.nav-menu]:static md:peer-checked:[&_.nav-menu]:bg-transparent md:peer-checked:[&_.nav-menu]:p-0 md:peer-checked:[&_.nav-menu]:shadow-none peer-checked:[&_.bar:nth-child(1)]:rotate-45 peer-checked:[&_.bar:nth-child(1)]:translate-y-[7px] peer-checked:[&_.bar:nth-child(2)]:opacity-0 peer-checked:[&_.bar:nth-child(3)]:-rotate-45 peer-checked:[&_.bar:nth-child(3)]:-translate-y-[7px]">
+    <nav class="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-[1200px] z-[1000] bg-[#141414]/60 backdrop-blur-2xl border border-white/10 rounded-[50px] px-4 md:px-8 py-4 shadow-lg transition-all duration-500 ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:bg-[#191919]/70 hover:border-primary/20 hover:shadow-xl peer-checked:rounded-3xl peer-checked:bg-[#141414]/95 peer-checked:[&_.nav-menu]:flex peer-checked:[&_.nav-menu]:flex-col peer-checked:[&_.nav-menu]:absolute peer-checked:[&_.nav-menu]:top-full peer-checked:[&_.nav-menu]:left-0 peer-checked:[&_.nav-menu]:w-full peer-checked:[&_.nav-menu]:bg-[#141414] peer-checked:[&_.nav-menu]:p-8 peer-checked:[&_.nav-menu]:rounded-b-3xl peer-checked:[&_.nav-menu]:shadow-2xl peer-checked:[&_.nav-menu]:animate-slideDown md:peer-checked:[&_.nav-menu]:flex-row md:peer-checked:[&_.nav-menu]:static md:peer-checked:[&_.nav-menu]:bg-transparent md:peer-checked:[&_.nav-menu]:p-0 md:peer-checked:[&_.nav-menu]:shadow-none peer-checked:[&_.bar:nth-child(1)]:rotate-45 peer-checked:[&_.bar:nth-child(1)]:translate-y-[7px] peer-checked:[&_.bar:nth-child(2)]:opacity-0 peer-checked:[&_.bar:nth-child(3)]:-rotate-45 peer-checked:[&_.bar:nth-child(3)]:-translate-y-[7px]">
         <label for="mobile-menu-check" class="fixed inset-0 bg-black/50 z-[-1] opacity-0 invisible peer-checked:opacity-100 peer-checked:visible transition-all duration-300 md:hidden"></label>
         <div class="w-full flex justify-between items-center relative">
-            <div class="text-[1.4rem] font-extrabold uppercase tracking-[2px] bg-clip-text text-transparent bg-gradient-to-r from-primary to-[#ff5e3a]">Vaidoso Kizomba School</div>
+            <div class="text-[1rem] md:text-[1.4rem] font-extrabold uppercase tracking-[2px] bg-clip-text text-transparent bg-gradient-to-r from-primary to-[#ff5e3a]">Vaidoso Kizomba School</div>
             
             <!-- Hamburger Icon -->
             <label for="mobile-menu-check" class="cursor-pointer z-[1001] md:hidden flex flex-col justify-center items-center w-8 h-6 gap-[5px] menu-toggle">
@@ -39,17 +39,17 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="h-screen bg-[linear-gradient(rgba(18,18,18,0.4),#121212),url('hero-bg.jpg')] bg-cover bg-center bg-fixed flex justify-center items-center text-center relative pt-[80px]">
-        <div class="absolute bottom-0 left-0 w-full h-[150px] bg-gradient-to-b from-transparent to-[#121212]"></div>
-        <div class="max-w-[800px] p-8 z-10 animate-fadeIn">
-            <h1 class="text-[3.5rem] md:text-[5rem] font-bold leading-[1.1] mb-6 shadow-md drop-shadow-[0_0_20px_rgba(255,45,85,0.4)]">Feel the Rhythm of <span class="text-primary drop-shadow-[0_0_20px_rgba(255,45,85,0.4)]">Kizomba</span></h1>
-            <p class="text-[1.2rem] md:text-[1.5rem] mb-10 text-gray-200">Learn the sensual and passionate dance from Angola</p>
-            <a href="https://www.instagram.com/vaidoso.kizomba.school/" class="inline-block bg-primary text-white font-bold py-4 px-10 rounded-full text-[1.1rem] transition-all duration-300 shadow-[0_10px_40px_-10px_rgba(255,45,85,0.5)] hover:bg-white hover:text-primary hover:-translate-y-[3px] hover:shadow-[0_15px_30px_rgba(255,45,85,0.4)]" target="_blank">Get Started</a>
+    <section id="home" class="hero">
+        <div class="hero-overlay-bottom"></div>
+        <div class="hero-content">
+            <h1>Feel the Rhythm of <span>Kizomba</span></h1>
+            <p>Learn the sensual and passionate dance from Angola</p>
+            <a href="https://www.instagram.com/vaidoso.kizomba.school/" class="cta-button" target="_blank">Get Started</a>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-32 relative">
+    <section id="about" class="py-32 relative overflow-hidden">
         <div class="absolute top-[10%] left-[-5%] text-[18vw] font-extrabold text-white/[0.02] pointer-events-none select-none font-montserrat uppercase">PASSION</div>
         <div class="max-w-[1200px] mx-auto px-8">
             <h2 class="text-5xl text-center mb-16 relative inline-block left-1/2 -translate-x-1/2 font-montserrat font-bold after:content-[''] after:block after:w-[60px] after:h-1 after:bg-primary after:mt-4 after:mx-auto after:rounded-sm after:shadow-[0_0_10px_#ff2d55]">About Kizomba</h2>
@@ -126,18 +126,32 @@
                 </div>
             </div>
 
-            <div class=\"grid grid-cols-1 md:grid-cols-3 gap-8 mt-16\">\n                <div class=\"text-center p-8 relative bg-gradient-to-br from-white/[0.03] to-white/[0.01] rounded-[20px] border border-white/[0.08] overflow-hidden transition-all duration-400 group before:content-[''] before:absolute before:top-1/2 before:left-1/2 before:w-0 before:h-0 before:-translate-x-1/2 before:-translate-y-1/2 before:bg-[radial-gradient(circle,rgba(255,45,85,0.2)_0%,transparent_70%)] before:transition-all before:duration-500 before:z-0 before:pointer-events-none before:rounded-full hover:before:w-[300px] hover:before:h-[300px]\">\n                    <div class=\"relative z-10 text-6xl font-extrabold text-white block mb-2 drop-shadow-[0_0_20px_rgba(255,45,85,0.3)]\">500+</div>\n                    <div class=\"text-muted text-sm uppercase tracking-[2px]\">Students Trained</div>\n                </div>\n                <div class=\"text-center p-8 relative bg-gradient-to-br from-white/[0.03] to-white/[0.01] rounded-[20px] border border-white/[0.08] overflow-hidden transition-all duration-400 group before:content-[''] before:absolute before:top-1/2 before:left-1/2 before:w-0 before:h-0 before:-translate-x-1/2 before:-translate-y-1/2 before:bg-[radial-gradient(circle,rgba(255,45,85,0.2)_0%,transparent_70%)] before:transition-all before:duration-500 before:z-0 before:pointer-events-none before:rounded-full hover:before:w-[300px] hover:before:h-[300px]\">\n                    <div class=\"relative z-10 text-6xl font-extrabold text-white block mb-2 drop-shadow-[0_0_20px_rgba(255,45,85,0.3)]\">8+</div>\n                    <div class=\"text-muted text-sm uppercase tracking-[2px]\">Years Experience</div>\n                </div>\n                <div class=\"text-center p-8 relative bg-gradient-to-br from-white/[0.03] to-white/[0.01] rounded-[20px] border border-white/[0.08] overflow-hidden transition-all duration-400 group before:content-[''] before:absolute before:top-1/2 before:left-1/2 before:w-0 before:h-0 before:-translate-x-1/2 before:-translate-y-1/2 before:bg-[radial-gradient(circle,rgba(255,45,85,0.2)_0%,transparent_70%)] before:transition-all before:duration-500 before:z-0 before:pointer-events-none before:rounded-full hover:before:w-[300px] hover:before:h-[300px]\">\n                    <div class=\"relative z-10 text-6xl font-extrabold text-white block mb-2 drop-shadow-[0_0_20px_rgba(255,45,85,0.3)]\">90%</div>\n                    <div class=\"text-muted text-sm uppercase tracking-[2px]\">Student Satisfaction</div>\n                </div>\n            </div>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Students Trained</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">8+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">90%</div>
+                    <div class="stat-label">Student Satisfaction</div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Classes Section -->
-    <section id="classes" class="py-32 relative">
+    <section id="classes" class="py-32 relative overflow-hidden">
         <div class="absolute top-[20%] left-[80%] text-[10vw] font-extrabold text-white/[0.05] pointer-events-none select-none font-montserrat uppercase">RHYTHM</div>
         <div class="max-w-[1200px] mx-auto px-8">
             <h2 class="text-5xl text-center mb-16 relative inline-block left-1/2 -translate-x-1/2 font-montserrat font-bold after:content-[''] after:block after:w-[60px] after:h-1 after:bg-primary after:mt-4 after:mx-auto after:rounded-sm after:shadow-[0_0_10px_#ff2d55]">Our Classes</h2>
             
             <!-- Desktop View -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 desktop-view">
+            <div class="desktop-view">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
                 <div class="bg-gradient-to-br from-[#1a1a1a] to-[#151515] rounded-[30px] p-14 pb-10 relative border border-white/[0.03] transition-all duration-500 ease-[cubic-bezier(0.2,0.8,0.2,1)] shadow-[0_10px_30px_rgba(0,0,0,0.2)] flex flex-col hover:-translate-y-4 hover:border-primary/30 hover:shadow-[0_25px_50px_rgba(0,0,0,0.4),0_0_30px_rgba(255,45,85,0.05)]">
                     <div class="absolute top-6 right-6 bg-primary/15 text-primary py-2 px-4 rounded-full text-xs font-extrabold uppercase tracking-wider border border-primary/30">First Class Free</div>
                     <h3 class="text-4xl mb-2 text-white tracking-tight font-montserrat">Beginners</h3>
@@ -185,6 +199,7 @@
                     <p class="text-primary mb-6 font-bold text-sm uppercase tracking-wide">Saturday • 9:00 PM</p>
                     <p class="text-gray-500 mb-auto text-lg leading-relaxed font-light pb-10">Practice what you've learned in a relaxed, social atmosphere. Dance, connect, and enjoy the community.</p>
                     <p class="text-4xl font-extrabold text-white text-left mt-auto tracking-tight drop-shadow-[0_0_20px_rgba(255,255,255,0.1)]">€12/night</p>
+                </div>
                 </div>
             </div>
 

@@ -4,7 +4,7 @@
 
 @layer base {
     html {
-        @apply scroll-smooth;
+        @apply scroll-smooth overflow-x-hidden;
         scrollbar-width: thin;
         scrollbar-color: #ff2d55 #121212;
     }
@@ -337,6 +337,20 @@
         @apply fixed bottom-8 right-8 w-[250px] h-[250px] z-[999] cursor-pointer;
         @apply flex justify-center items-center;
         animation: mascotBounce 2s infinite ease-in-out;
+    }
+    
+    @media (max-width: 768px) {
+        .mascot-container {
+            @apply w-[180px] h-[180px] bottom-4 right-4;
+        }
+        
+        .mascot-body {
+            @apply w-[180px] h-[180px];
+        }
+        
+        .mascot-speech {
+            @apply text-sm py-1.5 px-3 top-[-25px] right-[60px];
+        }
     }
     
     .mascot-body {
