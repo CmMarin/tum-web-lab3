@@ -37,24 +37,24 @@
 </head>
 <body class="bg-dark text-white font-sans leading-relaxed overflow-x-hidden antialiased">
     <!-- Navigation -->
-    <input type="checkbox" id="mobile-menu-check">
-    <nav class="navbar">
-        <label for="mobile-menu-check" class="menu-overlay"></label>
-        <div class="nav-container">
-            <div class="logo">Vaidoso Kizomba School</div>
+    <input type="checkbox" id="mobile-menu-check" class="hidden peer">
+    <nav class="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-[1200px] z-[1000] bg-[#141414]/60 backdrop-blur-2xl border border-white/10 rounded-[50px] px-8 py-4 shadow-lg transition-all duration-500 ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:bg-[#191919]/70 hover:border-primary/20 hover:shadow-xl peer-checked:rounded-3xl peer-checked:bg-[#141414]/95 peer-checked:[&_.nav-menu]:flex peer-checked:[&_.nav-menu]:flex-col peer-checked:[&_.nav-menu]:absolute peer-checked:[&_.nav-menu]:top-full peer-checked:[&_.nav-menu]:left-0 peer-checked:[&_.nav-menu]:w-full peer-checked:[&_.nav-menu]:bg-[#141414] peer-checked:[&_.nav-menu]:p-8 peer-checked:[&_.nav-menu]:rounded-b-3xl peer-checked:[&_.nav-menu]:shadow-2xl peer-checked:[&_.nav-menu]:animate-slideDown md:peer-checked:[&_.nav-menu]:flex-row md:peer-checked:[&_.nav-menu]:static md:peer-checked:[&_.nav-menu]:bg-transparent md:peer-checked:[&_.nav-menu]:p-0 md:peer-checked:[&_.nav-menu]:shadow-none peer-checked:[&_.bar:nth-child(1)]:rotate-45 peer-checked:[&_.bar:nth-child(1)]:translate-y-[7px] peer-checked:[&_.bar:nth-child(2)]:opacity-0 peer-checked:[&_.bar:nth-child(3)]:-rotate-45 peer-checked:[&_.bar:nth-child(3)]:-translate-y-[7px]">
+        <label for="mobile-menu-check" class="fixed inset-0 bg-black/50 z-[-1] opacity-0 invisible peer-checked:opacity-100 peer-checked:visible transition-all duration-300 md:hidden"></label>
+        <div class="w-full flex justify-between items-center relative">
+            <div class="text-[1.4rem] font-extrabold uppercase tracking-[2px] bg-clip-text text-transparent bg-gradient-to-r from-primary to-[#ff5e3a]">Vaidoso Kizomba School</div>
             
             <!-- Hamburger Icon -->
-            <label for="mobile-menu-check" class="menu-toggle">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
+            <label for="mobile-menu-check" class="cursor-pointer z-[1001] md:hidden flex flex-col justify-center items-center w-8 h-6 gap-[5px] menu-toggle">
+                <div class="bar w-full h-[2px] bg-white rounded-full transition-all duration-300 origin-center"></div>
+                <div class="bar w-full h-[2px] bg-white rounded-full transition-all duration-300"></div>
+                <div class="bar w-full h-[2px] bg-white rounded-full transition-all duration-300 origin-center"></div>
             </label>
 
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#classes" class="nav-link">Classes</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+            <ul class="nav-menu hidden md:flex gap-8 items-center">
+                <li><a href="#home" class="relative text-white font-semibold text-[0.95rem] tracking-wide transition-colors duration-300 hover:text-primary after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full">Home</a></li>
+                <li><a href="#about" class="relative text-white font-semibold text-[0.95rem] tracking-wide transition-colors duration-300 hover:text-primary after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full">About</a></li>
+                <li><a href="#classes" class="relative text-white font-semibold text-[0.95rem] tracking-wide transition-colors duration-300 hover:text-primary after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full">Classes</a></li>
+                <li><a href="#contact" class="relative text-white font-semibold text-[0.95rem] tracking-wide transition-colors duration-300 hover:text-primary after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full">Contact</a></li>
             </ul>
         </div>
     </nav>
