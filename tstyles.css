@@ -432,6 +432,22 @@
         @apply bg-gradient-to-br from-[#1e1e1e] to-[#181818] italic;
     }
     
+    .mobile-photo-card {
+        @apply p-0 overflow-hidden bg-transparent border-none;
+        @apply shadow-[0_15px_40px_rgba(0,0,0,0.4)];
+    }
+    
+    .mobile-photo-card img {
+        @apply w-full h-full object-cover rounded-[20px];
+        @apply transition-transform duration-300;
+        min-height: 280px;
+        max-height: 280px;
+    }
+    
+    .mobile-photo-card:active img {
+        @apply scale-95;
+    }
+    
     .mobile-contact-card {
         @apply bg-[rgba(30,30,30,0.6)] backdrop-blur-md text-center;
     }
