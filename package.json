@@ -4,8 +4,11 @@
   "description": "A premium landing page for \"Vaidoso Kizomba School,\" an Angolan dance academy. The design features a modern dark aesthetic with neon accents, glassmorphism effects, and fluid typography.",
   "main": "index.js",
   "scripts": {
-    "build:css": "npx tailwindcss -i ./tstyles.css -o ./output.css",
-    "watch:css": "npx tailwindcss -i ./tstyles.css -o ./output.css --watch",
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,5 +24,14 @@
   "homepage": "https://github.com/CmMarin/tum-web-lab3#readme",
   "devDependencies": {
     "tailwindcss": "^3.4.19"
+  },
+  "dependencies": {
+    "@astrojs/react": "^4.4.2",
+    "@astrojs/tailwind": "^6.0.2",
+    "@keystatic/astro": "^5.0.6",
+    "@keystatic/core": "^0.5.48",
+    "astro": "^5.18.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
   }
 }
