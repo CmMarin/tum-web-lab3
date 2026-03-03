@@ -139,92 +139,41 @@ import homeData from '../content/home.json';
     <section id="classes" class="py-32 relative overflow-hidden">
         <div class="absolute top-[20%] left-[80%] text-[10vw] font-extrabold text-white/[0.05] pointer-events-none select-none font-montserrat uppercase">RHYTHM</div>
         <div class="max-w-[1200px] mx-auto px-8">
-            <h2 class="text-5xl text-center mb-16 relative inline-block left-1/2 -translate-x-1/2 font-montserrat font-bold after:content-[''] after:block after:w-[60px] after:h-1 after:bg-primary after:mt-4 after:mx-auto after:rounded-sm after:shadow-[0_0_10px_#ff2d55]">Our Classes</h2>
+            <h2 class="text-5xl text-center mb-16 relative inline-block left-1/2 -translate-x-1/2 font-montserrat font-bold after:content-[''] after:block after:w-[60px] after:h-1 after:bg-primary after:mt-4 after:mx-auto after:rounded-sm after:shadow-[0_0_10px_#ff2d55]">{homeData.classes_title}</h2>
             
             <!-- Desktop View -->
             <div class="desktop-view">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                {homeData.classes_list.map((item) => (
                 <div class="bg-gradient-to-br from-[#1a1a1a] to-[#151515] rounded-[30px] p-14 pb-10 relative border border-white/[0.03] transition-all duration-500 ease-[cubic-bezier(0.2,0.8,0.2,1)] shadow-[0_10px_30px_rgba(0,0,0,0.2)] flex flex-col hover:-translate-y-4 hover:border-primary/30 hover:shadow-[0_25px_50px_rgba(0,0,0,0.4),0_0_30px_rgba(255,45,85,0.05)]">
+                    {item.is_featured && (
                     <div class="absolute top-6 right-6 bg-primary/15 text-primary py-2 px-4 rounded-full text-xs font-extrabold uppercase tracking-wider border border-primary/30">First Class Free</div>
-                    <h3 class="text-4xl mb-2 text-white tracking-tight font-montserrat">Beginners</h3>
+                    )}
+                    <h3 class="text-4xl mb-2 text-white tracking-tight font-montserrat">{item.title}</h3>
                     <div class="text-secondary mb-8 text-sm">
-                        <span class="star">★</span>
-                        <span class="star">☆</span>
-                        <span class="star">☆</span>
+                        {Array.from({ length: 3 }).map((_, i) => (
+                           <span class="star">{i < item.stars ? '★' : '☆'}</span> 
+                        ))}
                     </div>
-                    <p class="text-primary mb-6 font-bold text-sm uppercase tracking-wide">Monday & Wednesday • 7:00 PM</p>
-                    <p class="text-gray-500 mb-auto text-lg leading-relaxed font-light pb-10">New to kizomba? Learn the fundamentals of connection, basic steps, and rhythm. Perfect for dancers of any background.</p>
-                    <p class="text-4xl font-extrabold text-white text-left mt-auto tracking-tight drop-shadow-[0_0_20px_rgba(255,255,255,0.1)]">€45/month</p>
+                    <p class="text-primary mb-6 font-bold text-sm uppercase tracking-wide">{item.schedule}</p>
+                    <p class="text-gray-500 mb-auto text-lg leading-relaxed font-light pb-10">{item.description}</p>
+                    <p class="text-4xl font-extrabold text-white text-left mt-auto tracking-tight drop-shadow-[0_0_20px_rgba(255,255,255,0.1)]">{item.price}</p>
                 </div>
-
-                <div class="bg-gradient-to-br from-[#1a1a1a] to-[#151515] rounded-[30px] p-14 pb-10 relative border border-white/[0.03] transition-all duration-500 ease-[cubic-bezier(0.2,0.8,0.2,1)] shadow-[0_10px_30px_rgba(0,0,0,0.2)] flex flex-col hover:-translate-y-4 hover:border-primary/30 hover:shadow-[0_25px_50px_rgba(0,0,0,0.4),0_0_30px_rgba(255,45,85,0.05)]">
-                    <h3 class="text-4xl mb-2 text-white tracking-tight font-montserrat">Intermediate</h3>
-                    <div class="text-secondary mb-8 text-sm">
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">☆</span>
-                    </div>
-                    <p class="text-primary mb-6 font-bold text-sm uppercase tracking-wide">Tuesday & Thursday • 8:00 PM</p>
-                    <p class="text-gray-500 mb-auto text-lg leading-relaxed font-light pb-10">Build on your foundations with more complex movements, styling, and partnering techniques. Grow your musicality.</p>
-                    <p class="text-4xl font-extrabold text-white text-left mt-auto tracking-tight drop-shadow-[0_0_20px_rgba(255,255,255,0.1)]">€55/month</p>
-                </div>
-
-                <div class="bg-gradient-to-br from-[#1a1a1a] to-[#151515] rounded-[30px] p-14 pb-10 relative border border-white/[0.03] transition-all duration-500 ease-[cubic-bezier(0.2,0.8,0.2,1)] shadow-[0_10px_30px_rgba(0,0,0,0.2)] flex flex-col hover:-translate-y-4 hover:border-primary/30 hover:shadow-[0_25px_50px_rgba(0,0,0,0.4),0_0_30px_rgba(255,45,85,0.05)]">
-                    <h3 class="text-4xl mb-2 text-white tracking-tight font-montserrat">Advanced</h3>
-                    <div class="text-secondary mb-8 text-sm">
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                    </div>
-                    <p class="text-primary mb-6 font-bold text-sm uppercase tracking-wide">Friday • 8:30 PM</p>
-                    <p class="text-gray-500 mb-auto text-lg leading-relaxed font-light pb-10">Master intricate techniques, advanced styling, and leading/following. For experienced dancers seeking to refine their craft.</p>
-                    <p class="text-4xl font-extrabold text-white text-left mt-auto tracking-tight drop-shadow-[0_0_20px_rgba(255,255,255,0.1)]">€65/month</p>
-                </div>
-
-                <div class="bg-gradient-to-br from-[#1a1a1a] to-[#151515] rounded-[30px] p-14 pb-10 relative border border-white/[0.03] transition-all duration-500 ease-[cubic-bezier(0.2,0.8,0.2,1)] shadow-[0_10px_30px_rgba(0,0,0,0.2)] flex flex-col hover:-translate-y-4 hover:border-primary/30 hover:shadow-[0_25px_50px_rgba(0,0,0,0.4),0_0_30px_rgba(255,45,85,0.05)]">
-                    <h3 class="text-4xl mb-2 text-white tracking-tight font-montserrat">Social Nights</h3>
-                    <div class="text-secondary mb-8 text-sm">
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">☆</span>
-                    </div>
-                    <p class="text-primary mb-6 font-bold text-sm uppercase tracking-wide">Saturday • 9:00 PM</p>
-                    <p class="text-gray-500 mb-auto text-lg leading-relaxed font-light pb-10">Practice what you've learned in a relaxed, social atmosphere. Dance, connect, and enjoy the community.</p>
-                    <p class="text-4xl font-extrabold text-white text-left mt-auto tracking-tight drop-shadow-[0_0_20px_rgba(255,255,255,0.1)]">€12/night</p>
-                </div>
+                ))}
                 </div>
             </div>
 
             <!-- Mobile View: Classes Scroller -->
             <div class="mobile-view">
                 <div class="mobile-scroll-container">
+                    {homeData.classes_list.map((item) => (
                     <div class="mobile-card mobile-class-card">
-                        <h3>Beginners 🌱</h3>
-                        <p style="color: var(--primary);">Mon/Wed • 7 PM</p>
-                        <p>Start your journey! Learn basics & connection.</p>
-                        <h3 style="margin-top: 1rem; color: white;">€45/mo</h3>
+                        <h3>{item.title} {item.mobile_icon}</h3>
+                        <p style="color: var(--primary);">{item.schedule}</p>
+                        <p>{item.description}</p>
+                        <h3 style="margin-top: 1rem; color: white;">{item.price}</h3>
                     </div>
-
-                    <div class="mobile-card mobile-class-card">
-                        <h3>Intermediate 🚀</h3>
-                        <p style="color: var(--primary);">Tue/Thu • 8 PM</p>
-                        <p>Level up your moves & musicality.</p>
-                        <h3 style="margin-top: 1rem; color: white;">€55/mo</h3>
-                    </div>
-
-                    <div class="mobile-card mobile-class-card">
-                        <h3>Advanced 🔥</h3>
-                        <p style="color: var(--primary);">Fri • 8:30 PM</p>
-                        <p>Master intricate styling & leading.</p>
-                        <h3 style="margin-top: 1rem; color: white;">€65/mo</h3>
-                    </div>
-
-                    <div class="mobile-card mobile-class-card">
-                        <h3>Socials 🍹</h3>
-                        <p style="color: var(--primary);">Sat • 9 PM</p>
-                        <p>Dance, connect & enjoy the vibes!</p>
-                        <h3 style="margin-top: 1rem; color: white;">€12/night</h3>
-                    </div>
+                    ))}
                 </div>
             </div>
 

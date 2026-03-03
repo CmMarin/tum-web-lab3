@@ -11,5 +11,44 @@
     { "icon": "✓", "text": "Small group classes for personalized attention" },
     { "icon": "✓", "text": "Welcoming community for all levels" },
     { "icon": "✓", "text": "Regular social dance events" }
+  ],
+  "classes_title": "Our Classes",
+  "classes_list": [
+    {
+      "title": "Beginners",
+      "mobile_icon": "🌱",
+      "stars": 1,
+      "schedule": "Monday & Wednesday • 7:00 PM",
+      "description": "New to kizomba? Learn the fundamentals of connection, basic steps, and rhythm. Perfect for dancers of any background.",
+      "price": "€45/month",
+      "is_featured": true
+    },
+    {
+      "title": "Intermediate",
+      "mobile_icon": "🚀",
+      "stars": 2,
+      "schedule": "Tuesday & Thursday • 8:00 PM",
+      "description": "Build on your foundations with more complex movements, styling, and partnering techniques. Grow your musicality.",
+      "price": "€55/month",
+      "is_featured": false
+    },
+    {
+      "title": "Advanced",
+      "mobile_icon": "🔥",
+      "stars": 3,
+      "schedule": "Friday • 8:30 PM",
+      "description": "Master intricate techniques, advanced styling, and leading/following. For experienced dancers seeking to refine their craft.",
+      "price": "€65/month",
+      "is_featured": false
+    },
+    {
+      "title": "Social Nights",
+      "mobile_icon": "🍹",
+      "stars": 2,
+      "schedule": "Saturday • 9:00 PM",
+      "description": "Practice what you've learned in a relaxed, social atmosphere. Dance, connect, and enjoy the community.",
+      "price": "€12/night",
+      "is_featured": false
+    }
   ]
 }
