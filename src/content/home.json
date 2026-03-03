@@ -1,18 +1,32 @@
 {
-  "hero_title": "Feel the Rhythm of <span>Kizomba</span>",
-  "hero_subtitle": "Learn the sensual and passionate dance from Angola",
-  "cta_text": "Get Started",
-  "cta_link": "https://www.instagram.com/vaidoso.kizomba.school/",
   "about_title": "What is Kizomba?",
-  "about_description": "Kizomba is an Angolan partner dance that emerged in the late 1980s. It blends traditional Angolan rhythms with Brazilian and Caribbean influences, creating a slow, sensual, and deeply musical dance form.",
-  "features_title": "Why Choose Vaidoso?",
-  "features": [
-    { "icon": "✓", "text": "Authentic Angolan technique" },
-    { "icon": "✓", "text": "Small group classes for personalized attention" },
-    { "icon": "✓", "text": "Welcoming community for all levels" },
-    { "icon": "✓", "text": "Regular social dance events" }
+  "cta_link": "https://www.instagram.com/vaidoso.kizomba.school/",
+  "testimonials_list": [
+    {
+      "author": "Ioana M.",
+      "text": "I came to Vaidoso knowing nothing about kizomba, and now I can't imagine my life without it. The instructors are incredibly patient and the community is so welcoming. Every class feels like a celebration!",
+      "rating": 5
+    },
+    {
+      "author": "Mihai C.",
+      "text": "Finally found a place where I feel comfortable learning to dance. The authentic Angolan technique really makes a difference. Highly recommended for anyone wanting to learn real kizomba!",
+      "rating": 5
+    },
+    {
+      "author": "Elena P.",
+      "text": "The social nights are amazing! It's the perfect place to practice, meet new dancers, and just enjoy the music. Vaidoso has become my second home. So grateful for this community!",
+      "rating": 5
+    },
+    {
+      "author": "Alexandru B.",
+      "text": "I took the intermediate class and learned more in one month than I expected. The instructors really care about each student's progress. This is the real deal!",
+      "rating": 5
+    }
   ],
-  "classes_title": "Our Classes",
+  "about_description": "Kizomba is an Angolan partner dance that emerged in the late 1980s. It blends traditional Angolan rhythms with Brazilian and Caribbean influences, creating a slow, sensual, and deeply musical dance form.",
+  "testimonials_title": "What Our Students Say",
+  "hero_title": "Feel the Rhythm of <span>Kizomba</span>",
+  "features_title": "Why Choose Vaidoso?",
   "classes_list": [
     {
       "title": "Beginners",
@@ -50,5 +64,26 @@
       "price": "€12/night",
       "is_featured": false
     }
-  ]
+  ],
+  "cta_text": "Get Started",
+  "features": [
+    {
+      "icon": "✓",
+      "text": "Authentic Angolan technique"
+    },
+    {
+      "icon": "✓",
+      "text": "Small group classes for personalized attention"
+    },
+    {
+      "icon": "✓",
+      "text": "Welcoming community for all levels"
+    },
+    {
+      "icon": "✓",
+      "text": "Regular social dance events"
+    }
+  ],
+  "hero_subtitle": "Learn the sensual and passionate dance from Angola",
+  "classes_title": "Our Classes"
 }

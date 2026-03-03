@@ -202,79 +202,31 @@ import homeData from '../content/home.json';
     <section id="testimonials" class="testimonials">
         <div class="absolute top-[10%] right-[10%] text-[8vw] font-extrabold text-white/[0.15] pointer-events-none select-none font-montserrat uppercase">FAMILY</div>
         <div class="testimonials-container">
-            <h2>What Our Students Say</h2>
+            <h2>{homeData.testimonials_title}</h2>
             
             <!-- Desktop View -->
             <div class="testimonials-grid desktop-view">
+                {homeData.testimonials_list.map((testimonial) => (
                 <div class="testimonial-card">
                     <div class="testimonial-header">
-                        <div class="stars">★★★★★</div>
+                        <div class="stars">{'★'.repeat(testimonial.rating)}</div>
                     </div>
-                    <p class="testimonial-text">"I came to Vaidoso knowing nothing about kizomba, and now I can't imagine my life without it. The instructors are incredibly patient and the community is so welcoming. Every class feels like a celebration!"</p>
-                    <p class="testimonial-author">- Ioana M.</p>
+                    <p class="testimonial-text">"{testimonial.text}"</p>
+                    <p class="testimonial-author">- {testimonial.author}</p>
                 </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="stars">★★★★★</div>
-                    </div>
-                    <p class="testimonial-text">"Finally found a place where I feel comfortable learning to dance. The authentic Angolan technique really makes a difference. Highly recommended for anyone wanting to learn real kizomba!"</p>
-                    <p class="testimonial-author">- Mihai C.</p>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="stars">★★★★★</div>
-                    </div>
-                    <p class="testimonial-text">"The social nights are amazing! It's the perfect place to practice, meet new dancers, and just enjoy the music. Vaidoso has become my second home. So grateful for this community!"</p>
-                    <p class="testimonial-author">- Elena P.</p>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="stars">★★★★★</div>
-                    </div>
-                    <p class="testimonial-text">"I took the intermediate class and learned more in one month than I expected. The instructors really care about each student's progress. This is the real deal!"</p>
-                    <p class="testimonial-author">- Alexandru B.</p>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="stars">★★★★★</div>
-                    </div>
-                    <p class="testimonial-text">"Best decision I made this year. Kizomba at Vaidoso changed not just how I dance, but how I connect with people. Can't recommend it enough!"</p>
-                    <p class="testimonial-author">- Andreea G.</p>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="stars">★★★★★</div>
-                    </div>
-                    <p class="testimonial-text">"The atmosphere here is special. You can feel the passion for kizomba from everyone involved. The classes are well-structured and the instructors make it fun while being serious about technique."</p>
-                    <p class="testimonial-author">- Vlad T.</p>
-                </div>
+                ))}
             </div>
 
             <!-- Mobile View: Testimonials Scroller -->
             <div class="mobile-view">
                 <div class="mobile-scroll-container">
+                    {homeData.testimonials_list.map((testimonial) => (
                     <div class="mobile-card mobile-testimonial-card">
-                        <p>★★★★★</p>
-                        <p class="testimonial-text">"Came knowing nothing, now it's my life! Best community ever."</p>
-                        <p style="color: white; font-weight: bold;">- Ioana M.</p>
+                        <p>{'★'.repeat(testimonial.rating)}</p>
+                        <p class="testimonial-text">"{testimonial.mobile_text || testimonial.text}"</p>
+                        <p style="color: white; font-weight: bold;">- {testimonial.author}</p>
                     </div>
-
-                    <div class="mobile-card mobile-testimonial-card">
-                        <p>★★★★★</p>
-                        <p class="testimonial-text">"Real authentic technique. Found my dance family here!"</p>
-                        <p style="color: white; font-weight: bold;">- Mihai C.</p>
-                    </div>
-
-                    <div class="mobile-card mobile-testimonial-card">
-                        <p>★★★★★</p>
-                        <p class="testimonial-text">"Best decision this year. Changed how I connect with people."</p>
-                        <p style="color: white; font-weight: bold;">- Andreea G.</p>
-                    </div>
+                    ))}
                 </div>
             </div>
         </div>

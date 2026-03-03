@@ -40,3 +40,12 @@ collections:
               - {label: "Description", name: "description", widget: "text"}
               - {label: "Price", name: "price", widget: "string"}
               - {label: "Is Featured (First Class Free)", name: "is_featured", widget: "boolean", default: false}
+          - {label: "Testimonials Title", name: "testimonials_title", widget: "string"}
+          - label: "Testimonials List"
+            name: "testimonials_list"
+            widget: "list"
+            fields:
+              - {label: "Author", name: "author", widget: "string"}
+              - {label: "Text (Desktop)", name: "text", widget: "text"}
+              - {label: "Text (Mobile Short)", name: "mobile_text", widget: "string"}
+              - {label: "Rating (1-5)", name: "rating", widget: "number", value_type: "int", min: 1, max: 5}
