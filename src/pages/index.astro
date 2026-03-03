@@ -41,12 +41,12 @@ import homeData from '../content/home.json';
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <section id="home" class="hero" style={`background: linear-gradient(rgba(18,18,18,0.4), #121212), url('${homeData.hero.image}'); background-size: cover; background-position: center; background-attachment: fixed;`}>
         <div class="hero-overlay-bottom"></div>
         <div class="hero-content">
-            <h1 set:html={homeData.hero_title} />
-            <p>{homeData.hero_subtitle}</p>
-            <a href={homeData.cta_link} class="cta-button" target="_blank">{homeData.cta_text}</a>
+            <h1 set:html={homeData.hero.title} />
+            <p>{homeData.hero.subtitle}</p>
+            <a href={homeData.hero.cta_link} class="cta-button" target="_blank">{homeData.hero.cta_text}</a>
         </div>
     </section>
 
@@ -60,8 +60,8 @@ import homeData from '../content/home.json';
             <div class="desktop-view">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-20">
                     <div class="bg-card p-10 rounded-2xl border border-white/[0.08] transition-transform duration-300 hover:-translate-y-2 hover:border-primary">
-                        <h3 class="text-3xl text-primary mb-4 font-montserrat">{homeData.about_title}</h3>
-                        <p class="text-muted">{homeData.about_description}</p>
+                        <h3 class="text-3xl text-primary mb-4 font-montserrat">{homeData.about.title}</h3>
+                        <p class="text-muted">{homeData.about.description}</p>
                     </div>
                     
                     <div class="bg-card p-10 rounded-2xl border border-white/[0.08] transition-transform duration-300 hover:-translate-y-2 hover:border-primary">
@@ -71,9 +71,9 @@ import homeData from '../content/home.json';
                 </div>
 
                 <div class="bg-card p-12 rounded-[20px] border-[3px] border-transparent relative overflow-hidden" style="background-clip: padding-box, border-box; background-image: linear-gradient(#1e1e1e, #1e1e1e), linear-gradient(135deg, #ff2d55 0%, #ff5e3a 100%);">
-                    <h3 class="text-3xl mb-8 text-center font-montserrat">{homeData.features_title}</h3>
+                    <h3 class="text-3xl mb-8 text-center font-montserrat">{homeData.features.title}</h3>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                        {homeData.features.map((feature) => (
+                        {homeData.features.list.map((feature) => (
                         <div class="flex items-center gap-4 p-4 bg-white/[0.03] rounded-[10px] transition-colors duration-300 hover:bg-white/[0.06]">
                             <span class="text-primary font-bold text-xl">{feature.icon}</span>
                             <span>{feature.text}</span>
@@ -119,7 +119,7 @@ import homeData from '../content/home.json';
             </div>
 
             <div class="stats">
-                {homeData.stats.map((stat) => (
+                {homeData.stats.list.map((stat) => (
                 <div class="stat">
                     <div class="stat-number">{stat.number}</div>
                     <div class="stat-label">{stat.label}</div>
@@ -133,12 +133,12 @@ import homeData from '../content/home.json';
     <section id="classes" class="py-32 relative overflow-hidden">
         <div class="absolute top-[20%] left-[80%] text-[10vw] font-extrabold text-white/[0.05] pointer-events-none select-none font-montserrat uppercase">RHYTHM</div>
         <div class="max-w-[1200px] mx-auto px-8">
-            <h2 class="text-5xl text-center mb-16 relative inline-block left-1/2 -translate-x-1/2 font-montserrat font-bold after:content-[''] after:block after:w-[60px] after:h-1 after:bg-primary after:mt-4 after:mx-auto after:rounded-sm after:shadow-[0_0_10px_#ff2d55]">{homeData.classes_title}</h2>
+            <h2 class="text-5xl text-center mb-16 relative inline-block left-1/2 -translate-x-1/2 font-montserrat font-bold after:content-[''] after:block after:w-[60px] after:h-1 after:bg-primary after:mt-4 after:mx-auto after:rounded-sm after:shadow-[0_0_10px_#ff2d55]">{homeData.classes.title}</h2>
             
             <!-- Desktop View -->
             <div class="desktop-view">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-                {homeData.classes_list.map((item) => (
+                {homeData.classes.list.map((item) => (
                 <div class="bg-gradient-to-br from-[#1a1a1a] to-[#151515] rounded-[30px] p-14 pb-10 relative border border-white/[0.03] transition-all duration-500 ease-[cubic-bezier(0.2,0.8,0.2,1)] shadow-[0_10px_30px_rgba(0,0,0,0.2)] flex flex-col hover:-translate-y-4 hover:border-primary/30 hover:shadow-[0_25px_50px_rgba(0,0,0,0.4),0_0_30px_rgba(255,45,85,0.05)]">
                     {item.is_featured && (
                     <div class="absolute top-6 right-6 bg-primary/15 text-primary py-2 px-4 rounded-full text-xs font-extrabold uppercase tracking-wider border border-primary/30">First Class Free</div>
@@ -146,7 +146,7 @@ import homeData from '../content/home.json';
                     <h3 class="text-4xl mb-2 text-white tracking-tight font-montserrat">{item.title}</h3>
                     <div class="text-secondary mb-8 text-sm">
                         {Array.from({ length: 3 }).map((_, i) => (
-                           <span class="star">{i < item.stars ? '★' : '☆'}</span> 
+                           <span class="star">{i < parseInt(item.stars) ? '★' : '☆'}</span> 
                         ))}
                     </div>
                     <p class="text-primary mb-6 font-bold text-sm uppercase tracking-wide">{item.schedule}</p>
@@ -160,7 +160,7 @@ import homeData from '../content/home.json';
             <!-- Mobile View: Classes Scroller -->
             <div class="mobile-view">
                 <div class="mobile-scroll-container">
-                    {homeData.classes_list.map((item) => (
+                    {homeData.classes.list.map((item) => (
                     <div class="mobile-card mobile-class-card">
                         <h3>{item.title} {item.mobile_icon}</h3>
                         <p style="color: var(--primary);">{item.schedule}</p>
@@ -175,18 +175,11 @@ import homeData from '../content/home.json';
             <div class="mobile-view mt-12">
                 <h3 class="text-2xl text-center mb-6 text-primary font-montserrat">See Our Classes in Action</h3>
                 <div class="mobile-scroll-container">
+                    {homeData.classes.gallery.map((photo) => (
                     <div class="mobile-card mobile-photo-card">
-                        <img src="https://images.unsplash.com/photo-1767784097441-217557272ef5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Partner dance connection">
+                        <img src={photo.image} alt={photo.alt} />
                     </div>
-                    <div class="mobile-card mobile-photo-card">
-                        <img src="https://images.unsplash.com/photo-1767784097087-8c1588215083?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Dance lesson in studio">
-                    </div>
-                    <div class="mobile-card mobile-photo-card">
-                        <img src="https://images.unsplash.com/photo-1750863773786-52e7d30d6ed9?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Close partner dancing">
-                    </div>
-                    <div class="mobile-card mobile-photo-card">
-                        <img src="https://images.unsplash.com/photo-1697468502173-606f075e3cac?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Dance class practice">
-                    </div>
+                    ))}
                 </div>
             </div>
         </div>
@@ -196,11 +189,11 @@ import homeData from '../content/home.json';
     <section id="testimonials" class="testimonials">
         <div class="absolute top-[10%] right-[10%] text-[8vw] font-extrabold text-white/[0.15] pointer-events-none select-none font-montserrat uppercase">FAMILY</div>
         <div class="testimonials-container">
-            <h2>{homeData.testimonials_title}</h2>
+            <h2>{homeData.testimonials.title}</h2>
             
             <!-- Desktop View -->
             <div class="testimonials-grid desktop-view">
-                {homeData.testimonials_list.map((testimonial) => (
+                {homeData.testimonials.list.map((testimonial) => (
                 <div class="testimonial-card">
                     <div class="testimonial-header">
                         <div class="stars">{'★'.repeat(testimonial.rating)}</div>
@@ -214,7 +207,7 @@ import homeData from '../content/home.json';
             <!-- Mobile View: Testimonials Scroller -->
             <div class="mobile-view">
                 <div class="mobile-scroll-container">
-                    {homeData.testimonials_list.map((testimonial) => (
+                    {homeData.testimonials.list.map((testimonial) => (
                     <div class="mobile-card mobile-testimonial-card">
                         <p>{'★'.repeat(testimonial.rating)}</p>
                         <p class="testimonial-text">"{testimonial.mobile_text || testimonial.text}"</p>
