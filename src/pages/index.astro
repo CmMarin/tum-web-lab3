@@ -1,17 +1,35 @@
 ---
 import '../styles/reset.css';
 import '../styles/global.css';
-import homeData from '../content/home.json';
+import heroData from '../content/home/hero.json';
+import aboutData from '../content/home/about.json';
+import featuresData from '../content/home/features.json';
+import classesData from '../content/home/classes.json';
+import testimonialsData from '../content/home/testimonials.json';
+import statsData from '../content/home/stats.json';
+import faqData from '../content/home/faq.json';
+import settingsData from '../content/settings.json';
+import mascotData from '../content/mascot.json';
+
+const homeData = {
+    hero: heroData,
+    about: aboutData,
+    features: featuresData,
+    classes: classesData,
+    testimonials: testimonialsData,
+    stats: statsData,
+    faq: faqData
+};
 ---
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Vaidoso Kizomba School - Learn authentic Angolan kizomba dancing with expert instructors. Classes for all levels.">
+    <meta name="description" content={settingsData.site_description}>
     <meta name="theme-color" content="#d4165f">
     <link rel="icon" type="image/jpeg" href="/icon-lab.jpg">
-    <title>Vaidoso Kizomba School - Authentic Dance Classes</title>
+    <title>{settingsData.site_title}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
@@ -129,6 +147,21 @@ import homeData from '../content/home.json';
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-[#1a1a1a]">
+        <div class="max-w-[1000px] mx-auto px-8">
+            <h2 class="text-4xl text-center mb-12 font-montserrat font-bold text-white">{homeData.faq.title}</h2>
+            <div class="space-y-6">
+                {homeData.faq.list.map((item) => (
+                    <div class="bg-card p-6 rounded-lg border border-white/[0.05]">
+                        <h3 class="text-xl font-bold text-primary mb-2">{item.question}</h3>
+                        <p class="text-muted">{item.answer}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
     <!-- Classes Section -->
     <section id="classes" class="py-32 relative overflow-hidden">
         <div class="absolute top-[20%] left-[80%] text-[10vw] font-extrabold text-white/[0.05] pointer-events-none select-none font-montserrat uppercase">RHYTHM</div>
@@ -219,6 +252,21 @@ import homeData from '../content/home.json';
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-[#1a1a1a]">
+        <div class="max-w-[1000px] mx-auto px-8">
+            <h2 class="text-4xl text-center mb-12 font-montserrat font-bold text-white">{homeData.faq.title}</h2>
+            <div class="space-y-6">
+                {homeData.faq.list.map((item) => (
+                    <div class="bg-card p-6 rounded-lg border border-white/[0.05]">
+                        <h3 class="text-xl font-bold text-primary mb-2">{item.question}</h3>
+                        <p class="text-muted">{item.answer}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="absolute bottom-[10%] left-[30%] text-[14vw] font-extrabold text-white/[0.04] pointer-events-none select-none font-montserrat uppercase leading-[0.8]">LET'S<br>DANCE</div>
@@ -229,14 +277,14 @@ import homeData from '../content/home.json';
             <div class="contact-content desktop-view">
                 <div class="contact-info">
                     <h3>Get In Touch</h3>
-                    <p><strong>Email:</strong> <a href="mailto:info@vaidoso.com">info@vaidoso.com</a></p>
-                    <p><strong>Phone:</strong> <a href="tel:+40741234567">+40 741 234 567</a></p>
-                    <p><strong>Instagram:</strong> <a href="https://www.instagram.com/vaidoso.kizomba.school/" target="_blank">@vaidoso.kizomba.school</a></p>
+                    <p><strong>Email:</strong> <a href={`mailto:${settingsData.contact_email}`}>{settingsData.contact_email}</a></p>
+                    <p><strong>Phone:</strong> <a href={`tel:${settingsData.contact_phone.replace(/[^0-9+]/g, '')}`}>{settingsData.contact_phone}</a></p>
+                    <p><strong>Instagram:</strong> <a href={settingsData.instagram_link} target="_blank">@vaidoso.kizomba.school</a></p>
                 </div>
 
                 <div class="contact-cta">
                     <p>Sign up for your first free class today!</p>
-                    <a href="https://www.instagram.com/vaidoso.kizomba.school/" class="cta-button" target="_blank">Join Us on Instagram</a>
+                    <a href={settingsData.instagram_link} class="cta-button" target="_blank">Join Us on Instagram</a>
                 </div>
             </div>
 
@@ -245,33 +293,33 @@ import homeData from '../content/home.json';
                 <div class="mobile-scroll-container">
                     <div class="mobile-card mobile-contact-card">
                         <h3>📞 Call Us</h3>
-                        <p><a href="tel:+40741234567" style="color:white; text-decoration: none;">+40 741 234 567</a></p>
+                        <p><a href={`tel:${settingsData.contact_phone.replace(/[^0-9+]/g, '')}`} style="color:white; text-decoration: none;">{settingsData.contact_phone}</a></p>
                     </div>
 
                     <div class="mobile-card mobile-contact-card">
                         <h3>✉️ Email</h3>
-                        <p><a href="mailto:info@vaidoso.com" style="color:white; text-decoration: none;">info@vaidoso.com</a></p>
+                        <p><a href={`mailto:${settingsData.contact_email}`} style="color:white; text-decoration: none;">{settingsData.contact_email}</a></p>
                     </div>
 
                     <div class="mobile-card mobile-contact-card">
                         <h3>📸 Instagram</h3>
-                        <p><a href="https://www.instagram.com/vaidoso.kizomba.school/" target="_blank" style="color:var(--primary); text-decoration: none;">@vaidoso.kizomba.school</a></p>
+                        <p><a href={settingsData.instagram_link} target="_blank" style="color:var(--primary); text-decoration: none;">@vaidoso.kizomba.school</a></p>
                     </div>
                 </div>
             </div>
             
             <div class="mobile-view" style="text-align: center; margin-top: 2rem;">
-                <a href="https://www.instagram.com/vaidoso.kizomba.school/" class="cta-button" target="_blank" style="width: 100%;">Sign Up Now!</a>
+                <a href={settingsData.instagram_link} class="cta-button" target="_blank" style="width: 100%;">Sign Up Now!</a>
             </div>
         </div>
     </section>
 
     <!-- Mascot - "Vibey" The Dancing Note -->
-    <div class="mascot-container" title="Hi! I'm Vibey!">
+    <div class="mascot-container" title={mascotData.hover_title}>
         <div class="mascot-body">
             <img src="mascot.png" alt="Vibey the Mascot">
         </div>
-        <div class="mascot-speech">Join us!</div>
+        <div class="mascot-speech">{mascotData.speech_text}</div>
     </div>
 
     <!-- Footer -->
@@ -293,13 +341,13 @@ import homeData from '../content/home.json';
             <div class="footer-section">
                 <h4>Follow Us</h4>
                 <p>
-                    <a href="https://www.instagram.com/vaidoso.kizomba.school/" target="_blank">Instagram</a> • 
-                    <a href="mailto:info@vaidoso.com">Email</a>
+                    <a href={settingsData.instagram_link} target="_blank">Instagram</a> • 
+                    <a href={`mailto:${settingsData.contact_email}`}>Email</a>
                 </p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Vaidoso Kizomba School. All rights reserved.</p>
+            <p>{settingsData.footer_text}</p>
         </div>
     </footer>
 </body>

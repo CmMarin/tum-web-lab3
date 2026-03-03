@@ -8,99 +8,139 @@ media_folder: "public/images/uploads" # Media files will be stored in the repo u
 public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
 
 collections:
-  - name: "pages"
-    label: "Pages"
+  - name: "home"
+    label: "Home Page Content"
     files:
-      - file: "src/content/home.json"
-        label: "Home Page"
-        name: "home"
+      - file: "src/content/home/hero.json"
+        label: "Hero Section"
+        name: "hero"
         editor:
           preview: false
         fields:
-          - label: "Hero Section"
-            name: "hero"
-            widget: "object"
-            collapsed: false
-            fields:
-              - {label: "Title", name: "title", widget: "string", hint: "Main headline with HTML support (use <span> for styling)"}
-              - {label: "Subtitle", name: "subtitle", widget: "string"}
-              - {label: "Background Image", name: "image", widget: "image", hint: "Large high-quality image background"}
-              - {label: "CTA Text", name: "cta_text", widget: "string"}
-              - {label: "CTA Link", name: "cta_link", widget: "string", pattern: ['^https?://', "Must be a valid URL starting with http:// or https://"]}
+          - {label: "Title", name: "title", widget: "string", hint: "Main headline with HTML support (use <span> for styling)"}
+          - {label: "Subtitle", name: "subtitle", widget: "string"}
+          - {label: "Background Image", name: "image", widget: "image", hint: "Large high-quality image background"}
+          - {label: "CTA Text", name: "cta_text", widget: "string"}
+          - {label: "CTA Link", name: "cta_link", widget: "string", pattern: ['^https?://', "Must be a valid URL starting with http:// or https://"]}
 
-          - label: "About Section"
-            name: "about"
-            widget: "object"
-            collapsed: true
+      - file: "src/content/home/about.json"
+        label: "About Section"
+        name: "about"
+        editor:
+          preview: false
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description", name: "description", widget: "text"}
+
+      - file: "src/content/home/features.json"
+        label: "Features Section"
+        name: "features"
+        editor:
+          preview: false
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - label: "List"
+            name: "list"
+            widget: "list"
+            summary: "{{text}}"
+            fields:
+              - {label: "Icon", name: "icon", widget: "string", default: "✓"}
+              - {label: "Text", name: "text", widget: "string"}
+
+      - file: "src/content/home/classes.json"
+        label: "Classes Section"
+        name: "classes"
+        editor:
+          preview: false
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - label: "List"
+            name: "list"
+            widget: "list"
+            summary: "{{title}} ({{schedule}})"
             fields:
               - {label: "Title", name: "title", widget: "string"}
+              - {label: "Mobile Icon", name: "mobile_icon", widget: "string", hint: "Emoji for mobile view"}
+              - {label: "Stars", name: "stars", widget: "select", options: ["1", "2", "3"], default: "1"}
+              - {label: "Schedule", name: "schedule", widget: "string"}
               - {label: "Description", name: "description", widget: "text"}
-
-          - label: "Features Section"
-            name: "features"
-            widget: "object"
-            collapsed: true
+              - {label: "Price", name: "price", widget: "string"}
+              - {label: "Featured?", name: "is_featured", widget: "boolean", default: false}
+          - label: "Photo Gallery"
+            name: "gallery"
+            widget: "list"
+            summary: "{{alt}}"
             fields:
-              - {label: "Title", name: "title", widget: "string"}
-              - label: "List"
-                name: "list"
-                widget: "list"
-                summary: "{{text}}"
-                fields:
-                  - {label: "Icon", name: "icon", widget: "string", default: "✓"}
-                  - {label: "Text", name: "text", widget: "string"}
+              - {label: "Image", name: "image", widget: "image"}
+              - {label: "Alt Text", name: "alt", widget: "string"}
 
-          - label: "Classes Section"
-            name: "classes"
-            widget: "object"
-            collapsed: true
+      - file: "src/content/home/testimonials.json"
+        label: "Testimonials Section"
+        name: "testimonials"
+        editor:
+          preview: false
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - label: "List"
+            name: "list"
+            widget: "list"
+            summary: "{{author}} - {{rating}} stars"
             fields:
-              - {label: "Title", name: "title", widget: "string"}
-              - label: "List"
-                name: "list"
-                widget: "list"
-                summary: "{{title}} ({{schedule}})"
-                fields:
-                  - {label: "Title", name: "title", widget: "string"}
-                  - {label: "Mobile Icon", name: "mobile_icon", widget: "string", hint: "Emoji for mobile view"}
-                  - {label: "Stars", name: "stars", widget: "select", options: ["1", "2", "3"], default: "1"}
-                  - {label: "Schedule", name: "schedule", widget: "string"}
-                  - {label: "Description", name: "description", widget: "text"}
-                  - {label: "Price", name: "price", widget: "string"}
-                  - {label: "Featured?", name: "is_featured", widget: "boolean", default: false}
-              - label: "Photo Gallery"
-                name: "gallery"
-                widget: "list"
-                summary: "{{alt}}"
-                fields:
-                  - {label: "Image", name: "image", widget: "image"}
-                  - {label: "Alt Text", name: "alt", widget: "string"}
+              - {label: "Author", name: "author", widget: "string"}
+              - {label: "Text", name: "text", widget: "text"}
+              - {label: "Mobile Text", name: "mobile_text", widget: "text", required: false, hint: "Short version for mobile"}
+              - {label: "Rating", name: "rating", widget: "number", value_type: "int", min: 1, max: 5}
 
-          - label: "Testimonials Section"
-            name: "testimonials"
-            widget: "object"
-            collapsed: true
+      - file: "src/content/home/stats.json"
+        label: "Stats Section"
+        name: "stats"
+        editor:
+          preview: false
+        fields:
+          - label: "List"
+            name: "list"
+            widget: "list"
+            summary: "{{number}} {{label}}"
             fields:
-              - {label: "Title", name: "title", widget: "string"}
-              - label: "List"
-                name: "list"
-                widget: "list"
-                summary: "{{author}} - {{rating}} stars"
-                fields:
-                  - {label: "Author", name: "author", widget: "string"}
-                  - {label: "Text", name: "text", widget: "text"}
-                  - {label: "Mobile Text", name: "mobile_text", widget: "text", required: false, hint: "Short version for mobile"}
-                  - {label: "Rating", name: "rating", widget: "number", value_type: "int", min: 1, max: 5}
+              - {label: "Number", name: "number", widget: "string"}
+              - {label: "Label", name: "label", widget: "string"}
 
-          - label: "Stats Section"
-            name: "stats"
-            widget: "object"
-            collapsed: true
+      - file: "src/content/home/faq.json"
+        label: "FAQ Section"
+        name: "faq"
+        editor:
+          preview: false
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - label: "Questions"
+            name: "list"
+            widget: "list"
+            summary: "{{question}}"
             fields:
-              - label: "List"
-                name: "list"
-                widget: "list"
-                summary: "{{number}} {{label}}"
-                fields:
-                  - {label: "Number", name: "number", widget: "string"}
-                  - {label: "Label", name: "label", widget: "string"}
+              - {label: "Question", name: "question", widget: "string"}
+              - {label: "Answer", name: "answer", widget: "text"}
+
+  - name: "settings"
+    label: "Global Settings"
+    files:
+      - file: "src/content/settings.json"
+        label: "Site Configuration"
+        name: "site_config"
+        editor:
+          preview: false
+        fields:
+            - {label: "Site Title", name: "site_title", widget: "string"}
+            - {label: "SEO Description", name: "site_description", widget: "text"}
+            - {label: "Contact Email", name: "contact_email", widget: "string"}
+            - {label: "Contact Phone", name: "contact_phone", widget: "string"}
+            - {label: "Instagram Link", name: "instagram_link", widget: "string"}
+            - {label: "Footer Text", name: "footer_text", widget: "string"}
+
+      - file: "src/content/mascot.json"
+        label: "Mascot Configuration"
+        name: "mascot"
+        editor:
+         preview: false
+        fields:
+            - {label: "Speech Bubble Text", name: "speech_text", widget: "string"}
+            - {label: "Hover Title", name: "hover_title", widget: "string"}
