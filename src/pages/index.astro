@@ -119,18 +119,12 @@ import homeData from '../content/home.json';
             </div>
 
             <div class="stats">
+                {homeData.stats.map((stat) => (
                 <div class="stat">
-                    <div class="stat-number">500+</div>
-                    <div class="stat-label">Students Trained</div>
+                    <div class="stat-number">{stat.number}</div>
+                    <div class="stat-label">{stat.label}</div>
                 </div>
-                <div class="stat">
-                    <div class="stat-number">8+</div>
-                    <div class="stat-label">Years Experience</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">90%</div>
-                    <div class="stat-label">Student Satisfaction</div>
-                </div>
+                ))}
             </div>
         </div>
     </section>

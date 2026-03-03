@@ -49,3 +49,9 @@ collections:
               - {label: "Text (Desktop)", name: "text", widget: "text"}
               - {label: "Text (Mobile Short)", name: "mobile_text", widget: "string"}
               - {label: "Rating (1-5)", name: "rating", widget: "number", value_type: "int", min: 1, max: 5}
+          - label: "Stats"
+            name: "stats"
+            widget: "list"
+            fields:
+              - {label: "Number", name: "number", widget: "string"}
+              - {label: "Label", name: "label", widget: "string"}

@@ -85,5 +85,10 @@
     }
   ],
   "hero_subtitle": "Learn the sensual and passionate dance from Angola",
-  "classes_title": "Our Classes"
+  "classes_title": "Our Classes",
+  "stats": [
+    { "number": "500+", "label": "Students Trained" },
+    { "number": "8+", "label": "Years Experience" },
+    { "number": "90%", "label": "Student Satisfaction" }
+  ]
 }
