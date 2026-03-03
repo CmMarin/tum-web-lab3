@@ -21,3 +21,10 @@ collections:
           - {label: "CTA Link", name: "cta_link", widget: "string"}
           - {label: "About Title", name: "about_title", widget: "string"}
           - {label: "About Description", name: "about_description", widget: "text"}
+          - {label: "Features Title", name: "features_title", widget: "string"}
+          - label: "Features List"
+            name: "features"
+            widget: "list"
+            fields:
+              - {label: "Icon", name: "icon", widget: "string"}
+              - {label: "Text", name: "text", widget: "string"}

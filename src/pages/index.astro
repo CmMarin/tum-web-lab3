@@ -71,24 +71,14 @@ import homeData from '../content/home.json';
                 </div>
 
                 <div class="bg-card p-12 rounded-[20px] border-[3px] border-transparent relative overflow-hidden" style="background-clip: padding-box, border-box; background-image: linear-gradient(#1e1e1e, #1e1e1e), linear-gradient(135deg, #ff2d55 0%, #ff5e3a 100%);">
-                    <h3 class="text-3xl mb-8 text-center font-montserrat">Why Choose Vaidoso?</h3>
+                    <h3 class="text-3xl mb-8 text-center font-montserrat">{homeData.features_title}</h3>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                        {homeData.features.map((feature) => (
                         <div class="flex items-center gap-4 p-4 bg-white/[0.03] rounded-[10px] transition-colors duration-300 hover:bg-white/[0.06]">
-                            <span class="text-primary font-bold text-xl">✓</span>
-                            <span>Authentic Angolan technique</span>
+                            <span class="text-primary font-bold text-xl">{feature.icon}</span>
+                            <span>{feature.text}</span>
                         </div>
-                        <div class="flex items-center gap-4 p-4 bg-white/[0.03] rounded-[10px] transition-colors duration-300 hover:bg-white/[0.06]">
-                            <span class="text-primary font-bold text-xl">✓</span>
-                            <span>Small group classes for personalized attention</span>
-                        </div>
-                        <div class="flex items-center gap-4 p-4 bg-white/[0.03] rounded-[10px] transition-colors duration-300 hover:bg-white/[0.06]">
-                            <span class="text-primary font-bold text-xl">✓</span>
-                            <span>Welcoming community for all levels</span>
-                        </div>
-                        <div class="flex items-center gap-4 p-4 bg-white/[0.03] rounded-[10px] transition-colors duration-300 hover:bg-white/[0.06]">
-                            <span class="text-primary font-bold text-xl">✓</span>
-                            <span>Regular social dance events</span>
-                        </div>
+                        ))}
                     </div>
                 </div>
             </div>
