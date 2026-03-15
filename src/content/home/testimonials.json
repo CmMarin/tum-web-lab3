@@ -1,0 +1,29 @@
+{
+  "title": "What Our Students Say",
+  "list": [
+    {
+      "author": "Ioana M.",
+      "text": "I came to Vaidoso knowing nothing about kizomba, and now I can't imagine my life without it. The instructors are incredibly patient and the community is so welcoming. Every class feels like a celebration!",
+      "mobile_text": "Came knowing nothing, now it's my life! Best community ever.",
+      "rating": 5
+    },
+    {
+      "author": "Mihai C.",
+      "text": "Finally found a place where I feel comfortable learning to dance. The authentic Angolan technique really makes a difference. Highly recommended for anyone wanting to learn real kizomba!",
+      "mobile_text": "Real authentic technique. Found my dance family here!",
+      "rating": 5
+    },
+    {
+      "author": "Elena P.",
+      "text": "The social nights are amazing! It's the perfect place to practice, meet new dancers, and just enjoy the music. Vaidoso has become my second home. So grateful for this community!",
+      "mobile_text": "Social nights are amazing! Vaidoso is my second home.",
+      "rating": 5
+    },
+    {
+      "author": "Alexandru B.",
+      "text": "I took the intermediate class and learned more in one month than I expected. The instructors really care about each student's progress. This is the real deal!",
+      "mobile_text": "Learned more in one month than expected. The real deal!",
+      "rating": 5
+    }
+  ]
+}

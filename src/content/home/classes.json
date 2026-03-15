@@ -1,0 +1,59 @@
+{
+  "title": "Our Classes",
+  "list": [
+    {
+      "title": "Beginners",
+      "mobile_icon": "🌱",
+      "stars": "1",
+      "schedule": "Monday & Wednesday • 7:00 PM",
+      "description": "New to kizomba? Learn the fundamentals of connection, basic steps, and rhythm. Perfect for dancers of any background.",
+      "price": "€45/month",
+      "is_featured": true
+    },
+    {
+      "title": "Intermediate",
+      "mobile_icon": "🚀",
+      "stars": "2",
+      "schedule": "Tuesday & Thursday • 8:00 PM",
+      "description": "Build on your foundations with more complex movements, styling, and partnering techniques. Grow your musicality.",
+      "price": "€55/month",
+      "is_featured": false
+    },
+    {
+      "title": "Advanced",
+      "mobile_icon": "🔥",
+      "stars": "3",
+      "schedule": "Friday • 8:30 PM",
+      "description": "Master intricate techniques, advanced styling, and leading/following. For experienced dancers seeking to refine their craft.",
+      "price": "€65/month",
+      "is_featured": false
+    },
+    {
+      "title": "Social Nights",
+      "mobile_icon": "🍹",
+      "stars": "2",
+      "schedule": "Saturday • 9:00 PM",
+      "description": "Practice what you've learned in a relaxed, social atmosphere. Dance, connect, and enjoy the community.",
+      "price": "€12/night",
+      "is_featured": false
+    }
+  ],
+  "gallery": [
+    {
+      "image": "https://images.unsplash.com/photo-1767784097441-217557272ef5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "alt": "Partner dance connection"
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1767784097087-8c1588215083?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "alt": "Dance lesson in studio"
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1750863773786-52e7d30d6ed9?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "alt": "Close partner dancing"
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1697468502173-606f075e3cac?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "alt": "Dance class practice"
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+backend:
+  name: git-gateway
+  branch: Lab4 # Branch to update (optional; defaults to master)
+
+local_backend: true # Enable local backend for development
+
+media_folder: "public/images/uploads" # Media files will be stored in the repo under public/images/uploads
+public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
+
+collections:
+  - name: "home"
+    label: "Home Page Content"
+    files:
+      - file: "src/content/home/hero.json"
+        label: "Hero Section"
+        name: "hero"
+        editor:
+          preview: false
+        fields:
+          - {label: "Title", name: "title", widget: "string", hint: "Main headline with HTML support (use <span> for styling)"}
+          - {label: "Subtitle", name: "subtitle", widget: "string"}
+          - {label: "Background Image", name: "image", widget: "image", hint: "Large high-quality image background"}
+          - {label: "CTA Text", name: "cta_text", widget: "string"}
+          - {label: "CTA Link", name: "cta_link", widget: "string", pattern: ['^https?://', "Must be a valid URL starting with http:// or https://"]}
+
+      - file: "src/content/home/about.json"
+        label: "About Section"
+        name: "about"
+        editor:
+          preview: false
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description", name: "description", widget: "text"}
+
+      - file: "src/content/home/features.json"
+        editor:
+          preview: false
+        label: "Features Section"
+        name: "features"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - label: "List"
+            name: "list"
+            widget: "list"
+            summary: "{{text}}"
+            fields:
+              - {label: "Icon", name: "icon", widget: "string", default: "✓"}
+              - {label: "Text", name: "text", widget: "string"}
+
+      - file: "src/content/home/classes.json"
+        editor:
+          preview: false
+        label: "Classes Section"
+        name: "classes"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - label: "List"
+            name: "list"
+            widget: "list"
+            summary: "{{title}} ({{schedule}})"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Mobile Icon", name: "mobile_icon", widget: "string", hint: "Emoji for mobile view"}
+              - {label: "Stars", name: "stars", widget: "select", options: ["1", "2", "3"], default: "1"}
+              - {label: "Schedule", name: "schedule", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Price", name: "price", widget: "string"}
+              - {label: "Featured?", name: "is_featured", widget: "boolean", default: false}
+          - label: "Photo Gallery"
+            name: "gallery"
+            widget: "list"
+            summary: "{{alt}}"
+            fields:
+              - {label: "Image", name: "image", widget: "image"}
+              - {label: "Alt Text", name: "alt", widget: "string"}
+
+      - file: "src/content/home/testimonials.json"
+        editor:
+          preview: false
+        label: "Testimonials Section"
+        name: "testimonials"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - label: "List"
+            name: "list"
+            widget: "list"
+            summary: "{{author}} - {{rating}} stars"
+            fields:
+              - {label: "Author", name: "author", widget: "string"}
+              - {label: "Text", name: "text", widget: "text"}
+              - {label: "Mobile Text", name: "mobile_text", widget: "text", required: false, hint: "Short version for mobile"}
+              - {label: "Rating", name: "rating", widget: "number", value_type: "int", min: 1, max: 5}
+
+      - file: "src/content/home/stats.json"
+        editor:
+          preview: false
+        label: "Stats Section"
+        name: "stats"
+        fields:
+          - label: "List"
+            name: "list"
+            widget: "list"
+            summary: "{{number}} {{label}}"
+            fields:
+              - {label: "Number", name: "number", widget: "string"}
+              - {label: "Label", name: "label", widget: "string"}
+
+      - file: "src/content/home/faq.json"
+        editor:
+          preview: false
+        label: "FAQ Section"
+        name: "faq"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - label: "Questions"
+            name: "list"
+            widget: "list"
+            summary: "{{question}}"
+            fields:
+              - {label: "Question", name: "question", widget: "string"}
+              - {label: "Answer", name: "answer", widget: "text"}
+
+  - name: "settings"
+    label: "Global Settings"
+    files:
+      - file: "src/content/settings.json"
+        label: "Site Configuration"
+        name: "site_config"
+        editor:
+          preview: false
+        fields:
+            - {label: "Site Title", name: "site_title", widget: "string"}
+            - {label: "SEO Description", name: "site_description", widget: "text"}
+            - {label: "Contact Email", name: "contact_email", widget: "string"}
+            - {label: "Contact Phone", name: "contact_phone", widget: "string"}
+            - {label: "Instagram Link", name: "instagram_link", widget: "string"}
+            - {label: "Footer Text", name: "footer_text", widget: "string"}
+
+      - file: "src/content/mascot.json"
+        label: "Mascot Configuration"
+        name: "mascot"
+        editor:
+          preview: false
+        fields:
+            - {label: "Speech Bubble Text", name: "speech_text", widget: "string"}
+            - {label: "Hover Title", name: "hover_title", widget: "string"}
