@@ -8,7 +8,8 @@
       "schedule": "Monday & Wednesday • 7:00 PM",
       "description": "New to kizomba? Learn the fundamentals of connection, basic steps, and rhythm. Perfect for dancers of any background.",
       "price": "€45/month",
-      "is_featured": true
+      "is_featured": true,
+      "discount_price": "€35/month"
     },
     {
       "title": "Intermediate",
