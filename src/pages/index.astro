@@ -181,7 +181,17 @@ const homeData = {
                     </div>
                     <p class="text-primary mb-6 font-bold text-sm uppercase tracking-wide">{item.schedule}</p>
                     <p class="text-gray-500 mb-auto text-lg leading-relaxed font-light pb-10">{item.description}</p>
-                    <p class="text-4xl font-extrabold text-white text-left mt-auto tracking-tight drop-shadow-[0_0_20px_rgba(255,255,255,0.1)]">{item.price}</p>
+                    {item.discount_price ? (
+                        <div class="mt-auto text-left">
+                            <span class="bg-primary text-white text-xs font-bold px-2 py-1 rounded mb-2 inline-block">SALE</span>
+                            <div class="flex items-center gap-3">
+                                <p class="text-2xl text-gray-500 line-through font-bold">{item.price}</p>
+                                <p class="text-4xl font-extrabold text-white tracking-tight drop-shadow-[0_0_20px_rgba(255,255,255,0.1)]">{item.discount_price}</p>
+                            </div>
+                        </div>
+                    ) : (
+                        <p class="text-4xl font-extrabold text-white text-left mt-auto tracking-tight drop-shadow-[0_0_20px_rgba(255,255,255,0.1)]">{item.price}</p>
+                    )}
                 </div>
                 ))}
                 </div>
@@ -195,7 +205,17 @@ const homeData = {
                         <h3>{item.title} {item.mobile_icon}</h3>
                         <p style="color: var(--primary);">{item.schedule}</p>
                         <p>{item.description}</p>
-                        <h3 style="margin-top: 1rem; color: white;">{item.price}</h3>
+                        {item.discount_price ? (
+                             <div style="margin-top: 1rem;">
+                                <span style="background-color: var(--primary); color: white; font-size: 0.75rem; font-weight: bold; padding: 0.25rem 0.5rem; border-radius: 0.25rem;">SALE</span>
+                                <div style="display: flex; align-items: center; gap: 0.5rem; margin-top: 0.5rem;">
+                                    <span style="color: #6b7280; text-decoration: line-through; font-size: 1rem;">{item.price}</span>
+                                    <h3 style="color: white; margin: 0;">{item.discount_price}</h3>
+                                </div>
+                             </div>
+                        ) : (
+                            <h3 style="margin-top: 1rem; color: white;">{item.price}</h3>
+                        )}
                     </div>
                     ))}
                 </div>
